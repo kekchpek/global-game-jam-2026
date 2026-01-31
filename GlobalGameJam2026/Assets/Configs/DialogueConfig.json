@@ -120,9 +120,9 @@
             "question": "What do you notice first when you meet a girl?",
             "options": 
             [
-                { "questionText": "Her body", "isCorrect": true, "reactionText": "Thanks for the compliment." },
+                { "questionText": "Her body", "isCorrect": true, "reactionText": "You're honest. I like that!" },
                 { "questionText": "Her personality", "isCorrect": false, "reactionText": "Classic move to avoid your own issues." },
-                { "questionText": "sense of humor", "isCorrect": false, "reactionText": "Humor is the best shield for the poor." }
+                { "questionText": "Sense of humor", "isCorrect": false, "reactionText": "Humor is nice, but it's usually a defense." }
             ]
         },
         {
