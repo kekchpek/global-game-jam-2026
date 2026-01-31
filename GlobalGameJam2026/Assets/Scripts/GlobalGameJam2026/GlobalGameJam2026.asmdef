@@ -8,7 +8,8 @@
         "kekchpek.Auxiliary",
         "AssetsSystem",
         "GameSaves",
-        "SaveSystem"
+        "SaveSystem",
+        "kekchpek.AnimationController"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

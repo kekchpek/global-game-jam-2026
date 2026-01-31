@@ -3,7 +3,9 @@ using GlobalGameJam2026.MVVM.Models.Dating;
 using GlobalGameJam2026.MVVM.Views.DatingScreen;
 using GlobalGameJam2026.MVVM.Views.DialogueOptions;
 using GlobalGameJam2026.MVVM.Views.DialogueQuestion;
+using GlobalGameJam2026.MVVM.Views.LoseComics;
 using GlobalGameJam2026.MVVM.Views.RedFlagsIndicator;
+using GlobalGameJam2026.MVVM.Views.WinComics;
 using GlobalGameJam2026.Static;
 using Startup.Core;
 using UnityMVVM.DI;
@@ -24,6 +26,8 @@ namespace GlobalGameJam2026
             Container.InstallView<DialogueOptionsView, IDialogueOptionsViewModel, DialogueOptionsViewModel>();
             Container.InstallView<DialogueQuestionView, IDialogueQuestionViewModel, DialogueQuestionViewModel>();
             Container.InstallView<RedFlagsIndicatorView, IRedFlagsIndicatorViewModel, RedFlagsIndicatorViewModel>();
+            Container.InstallView<LoseComicsView, ILoseComicsViewModel, LoseComicsViewModel>(ViewNames.LoseComics);
+            Container.InstallView<WinComicsView, IWinComicsViewModel, WinComicsViewModel>(ViewNames.WinComics);
         }
     }
 }

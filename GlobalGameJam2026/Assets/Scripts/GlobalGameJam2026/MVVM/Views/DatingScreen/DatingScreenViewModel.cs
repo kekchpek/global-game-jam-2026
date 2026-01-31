@@ -2,7 +2,9 @@ using System;
 using Cysharp.Threading.Tasks;
 using GlobalGameJam2026.MVVM.Models.Dating;
 using GlobalGameJam2026.MVVM.Models.Dating.Data;
+using GlobalGameJam2026.Static;
 using kekchpek.Auxiliary.Contexts;
+using UnityMVVM.ViewManager;
 using UnityMVVM.ViewModelCore;
 
 namespace GlobalGameJam2026.MVVM.Views.DatingScreen
@@ -18,13 +20,18 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
         private readonly ViewModelContext<GirlReactionContext> _girlReactionContext;
         private readonly IDatingService _datingService;
         private readonly IDatingModel _datingModel;
+        private readonly IViewManager _viewManager;
 
         public event Action<GirlReactionContext> ContextSelected;
 
-        public DatingScreenViewModel(IDatingService datingService, IDatingModel datingModel)
+        public DatingScreenViewModel(
+            IDatingService datingService, 
+            IDatingModel datingModel,
+            IViewManager viewManager)
         {
             _datingService = datingService;
             _datingModel = datingModel;
+            _viewManager = viewManager;
             _datingService.SelectNextQuestion();
             _girlReactionContext = new ViewModelContext<GirlReactionContext>(this, GirlReactionContext.None);
         }
@@ -43,11 +50,11 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
         {
             await UniTask.WaitForSeconds(ReactionDisplayDelaySeconds);
             
-            // If this is already an end game context, close the view after delay
+            // If this is already an end game context, handle end game after delay
             if (context.Reaction == GirlReaction.Win || context.Reaction == GirlReaction.Lose)
             {
                 await UniTask.WaitForSeconds(EndGameDisplayDelaySeconds);
-                await Close();
+                await HandleEndGameAsync(context.Reaction);
                 return;
             }
             
@@ -69,6 +76,18 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
             {
                 ContextSelected?.Invoke(GirlReactionContext.None);
                 _datingService.SelectNextQuestion();
+            }
+        }
+
+        private async UniTask HandleEndGameAsync(GirlReaction reaction)
+        {
+            if (reaction == GirlReaction.Lose)
+            {
+                await _viewManager.Open(LayerNames.Screen, ViewNames.LoseComics);
+            }
+            else if (reaction == GirlReaction.Win)
+            {
+                await _viewManager.Open(LayerNames.Screen, ViewNames.WinComics);
             }
         }
 

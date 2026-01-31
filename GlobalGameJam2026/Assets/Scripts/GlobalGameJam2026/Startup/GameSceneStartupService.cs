@@ -30,6 +30,8 @@ namespace GlobalGameJam2026
         protected override async UniTask SceneStartup()
         {
             await _datingService.Initialize();
+            await _assetsModel.LoadAsset<GameObject>(ViewNames.LoseComics);
+            await _assetsModel.LoadAsset<GameObject>(ViewNames.WinComics);
             await _assetsModel.LoadAsset<GameObject>(ViewNames.DatingScreen);
             await _viewManager.Open(LayerNames.Screen, ViewNames.DatingScreen);
         }
