@@ -11,5 +11,6 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
         void SetMaxQuestions(int maxQuestions);
         void IncrementQuestionsAnswered();
         void SetGameState(DatingGameState state);
+        void AddUsedQuestionId(string questionId);
     }
 }

@@ -1,7 +1,17 @@
 
 {
-    "maxRedFlags": 3,
-    "maxQuestions": 10,
+    "maxRedFlags": 1,
+    "maxQuestions": 2,
+    "winDialogues":[
+        "Marry me!", 
+        "I love you!", 
+        "I want to be with you!"
+    ],
+    "loseDialogues":[
+        "Fuck off", 
+        "I'm not interested", 
+        "I'm not sure about that"
+    ],
     "questions": [
         {
             "id": "1",

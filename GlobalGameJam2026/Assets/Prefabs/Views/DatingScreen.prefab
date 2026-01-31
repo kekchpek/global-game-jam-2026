@@ -581,7 +581,7 @@ RectTransform:
   m_GameObject: {fileID: 5068806573075178961}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 735415617123599390}
@@ -668,6 +668,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d5b4319b6144b84aa96ef2238662a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GlobalGameJam2026::GlobalGameJam2026.MVVM.Views.DatingScreen.DatingScreenView
+  _endScreenPanel: {fileID: 0}
+  _winContent: {fileID: 0}
+  _loseContent: {fileID: 0}
+  _endDialogueText: {fileID: 904108333367345478}
 --- !u!1 &6102755302234514874
 GameObject:
   m_ObjectHideFlags: 0

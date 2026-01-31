@@ -6,7 +6,9 @@
         "UniTask",
         "Unity.TextMeshPro",
         "kekchpek.Auxiliary",
-        "AssetsSystem"
+        "AssetsSystem",
+        "GameSaves",
+        "SaveSystem"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

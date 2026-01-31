@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using AssetsSystem;
 using Cysharp.Threading.Tasks;
 using GlobalGameJam2026.MVVM.Models.Dating.Data;
@@ -15,7 +16,6 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
         private readonly IAssetsModel _assetsModel;
         private DialogueConfig _config;
         private List<DialogueQuestionData> _availableQuestions;
-        private HashSet<string> _usedQuestionIds;
 
         public DatingService(
             IDatingMutableModel model,
@@ -23,7 +23,6 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
         {
             _model = model;
             _assetsModel = assetsModel;
-            _usedQuestionIds = new HashSet<string>();
         }
 
         public async UniTask Initialize()
@@ -76,22 +75,27 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
             if (_availableQuestions == null || _availableQuestions.Count == 0)
             {
                 _availableQuestions = new List<DialogueQuestionData>(_config.Questions);
-                _usedQuestionIds.Clear();
             }
 
-            var unusedQuestions = _availableQuestions.FindAll(q => !_usedQuestionIds.Contains(q.Id));
+            var unusedQuestions = _availableQuestions.FindAll(q => !_model.UsedQuestionIds.Contains(q.Id));
 
             if (unusedQuestions.Count == 0)
             {
-                _usedQuestionIds.Clear();
                 unusedQuestions = _availableQuestions;
             }
 
             var randomIndex = Random.Range(0, unusedQuestions.Count);
             var selectedQuestion = unusedQuestions[randomIndex];
 
-            _usedQuestionIds.Add(selectedQuestion.Id);
+            _model.AddUsedQuestionId(selectedQuestion.Id);
             _model.SetCurrentQuestion(selectedQuestion);
+        }
+
+        public string GetEndDialogue(bool won)
+        {
+            return won 
+            ? _config.WinDialogues[Random.Range(0, _config.WinDialogues.Count)] 
+            : _config.LoseDialogues[Random.Range(0, _config.LoseDialogues.Count)];
         }
     }
 }

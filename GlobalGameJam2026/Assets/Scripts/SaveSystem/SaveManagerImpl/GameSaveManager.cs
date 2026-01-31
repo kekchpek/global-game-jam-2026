@@ -115,6 +115,7 @@ namespace kekchpek.GameSaves
         {
             _gameSaveManager.RegisterCustomCodec(new StringListCodec());
             _gameSaveManager.RegisterCustomCodec(new StringArrayCodec());
+            _gameSaveManager.RegisterCustomCodec(new BoolListCodec());
 
             _applicationService.ApplicationQuit += OnApplicationQuit;
         }

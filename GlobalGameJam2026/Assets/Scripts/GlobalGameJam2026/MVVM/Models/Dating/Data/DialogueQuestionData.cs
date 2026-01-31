@@ -14,8 +14,16 @@ namespace GlobalGameJam2026.MVVM.Models.Dating.Data
         [JsonProperty]
         private List<DialogueOptionData> options;
 
+        [JsonProperty]
+        private List<string> winDialogues;
+
+        [JsonProperty]
+        private List<string> loseDialogues;
+
         public string Id => id;
         public string Question => question;
         public IReadOnlyList<DialogueOptionData> Options => options;
+        public IReadOnlyList<string> WinDialogues => winDialogues;
+        public IReadOnlyList<string> LoseDialogues => loseDialogues;
     }
 }

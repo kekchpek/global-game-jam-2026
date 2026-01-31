@@ -7,5 +7,6 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
         UniTask Initialize();
         bool SelectAnswer(int optionIndex);
         void SelectNextQuestion();
+        string GetEndDialogue(bool won);
     }
 }
