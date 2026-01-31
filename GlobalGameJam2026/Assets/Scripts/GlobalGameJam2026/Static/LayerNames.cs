@@ -8,6 +8,5 @@ namespace GlobalGameJam2026.Static
     public static class ViewNames
     {
         public const string DatingScreen = "DatingScreen";
-
     }
 }

@@ -1,5 +1,4 @@
 using Cysharp.Threading.Tasks;
-using GlobalGameJam2026.MVVM.Models.Dating.Data;
 
 namespace GlobalGameJam2026.MVVM.Models.Dating
 {
