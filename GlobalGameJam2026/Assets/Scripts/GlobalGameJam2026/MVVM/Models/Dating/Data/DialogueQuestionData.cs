@@ -1,0 +1,21 @@
+using System.Collections.Generic;
+using Newtonsoft.Json;
+
+namespace GlobalGameJam2026.MVVM.Models.Dating.Data
+{
+    public class DialogueQuestionData
+    {
+        [JsonProperty]
+        private string id;
+
+        [JsonProperty]
+        private string question;
+
+        [JsonProperty]
+        private List<DialogueOptionData> options;
+
+        public string Id => id;
+        public string Question => question;
+        public IReadOnlyList<DialogueOptionData> Options => options;
+    }
+}

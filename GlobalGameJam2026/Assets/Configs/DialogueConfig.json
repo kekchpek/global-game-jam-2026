@@ -1,0 +1,38 @@
+
+{
+    "maxRedFlags": 3,
+    "maxQuestions": 10,
+    "questions": [
+        {
+            "id": "1",
+            "question": "Hello, how are you?",
+            "options": 
+            [
+                { "text": "Good", "isCorrect": false },
+                { "text": "Bad", "isCorrect": false },
+                { "text": "I'm fine", "isCorrect": false },
+                { "text": "I'm not fine", "isCorrect": true }
+            ]
+        },
+        {
+            "id": "2",
+            "question": "What is your name?",
+            "options": 
+            [
+                { "text": "John", "isCorrect": false },
+                { "text": "Pork", "isCorrect": true },
+                { "text": "Bill", "isCorrect": false }
+            ]
+        },
+        {
+            "id": "3",
+            "question": "What do you want to eat?",
+            "options": 
+            [
+                { "text": "Whatever you want", "isCorrect": true },
+                { "text": "Burger", "isCorrect": false },
+                { "text": "Salad", "isCorrect": false }
+            ]
+        }
+    ]
+}
