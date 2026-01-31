@@ -16,5 +16,6 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
         IBindable<DatingGameState> GameState { get; }
         IBindableList<bool> AnsweredQuestions { get; }
         IReadOnlyCollection<string> UsedQuestionIds { get; }
+        IReadOnlyCollection<string> RedFlagQuestionIds { get; }
     }
 }

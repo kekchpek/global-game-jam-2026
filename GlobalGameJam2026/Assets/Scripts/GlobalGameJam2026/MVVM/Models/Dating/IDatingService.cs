@@ -8,5 +8,6 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
         bool SelectAnswer(int optionIndex);
         void SelectNextQuestion();
         string GetEndDialogue(bool won);
+        void MaskSwap();
     }
 }

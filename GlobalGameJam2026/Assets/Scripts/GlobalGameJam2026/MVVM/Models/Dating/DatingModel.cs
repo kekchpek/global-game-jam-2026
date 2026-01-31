@@ -23,6 +23,7 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
         private IMutable<string> _currentQuestionId;
         private IMutable<MutableList<bool>> _answeredQuestions;
         private IMutable<MutableList<string>> _usedQuestionIds;
+        private IMutable<MutableList<string>> _redFlagQuestionIds;
 
         public IBindable<DialogueQuestionData> CurrentQuestion => _currentQuestion;
         public IBindable<int> GreenFlagCount => GetOrCreateSavedInt(ref _greenFlagCount, "GreenFlagCount", 0);
@@ -32,7 +33,8 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
         public IBindable<int> QuestionsAnswered => GetOrCreateSavedInt(ref _questionsAnswered, "QuestionsAnswered", 0);
         public IBindable<DatingGameState> GameState => _gameState;
         public IBindableList<bool> AnsweredQuestions => GetOrCreateSavedBoolList().Value;
-        public IReadOnlyCollection<string> UsedQuestionIds => GetOrCreateSavedStringList().Value;
+        public IReadOnlyCollection<string> UsedQuestionIds => GetOrCreateSavedUsedQuestionIds().Value;
+        public IReadOnlyCollection<string> RedFlagQuestionIds => GetOrCreateSavedRedFlagQuestionIds().Value;
 
         public DatingModel(IGameSaveManager gameSaveManager)
         {
@@ -63,10 +65,11 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
             GetOrCreateSavedBoolList().Value.Add(true);
         }
 
-        public void AddRedFlag()
+        public void AddRedFlag(string questionId)
         {
             GetOrCreateSavedInt(ref _redFlagCount, "RedFlagCount", 0).Value++;
             GetOrCreateSavedBoolList().Value.Add(false);
+            GetOrCreateSavedRedFlagQuestionIds().Value.Add(questionId);
         }
 
         public void SetMaxRedFlags(int maxRedFlags)
@@ -91,7 +94,34 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
 
         public void AddUsedQuestionId(string questionId)
         {
-            GetOrCreateSavedStringList().Value.Add(questionId);
+            GetOrCreateSavedUsedQuestionIds().Value.Add(questionId);
+        }
+
+        public void RemoveUsedQuestionIds(IEnumerable<string> questionIds)
+        {
+            var usedQuestions = GetOrCreateSavedUsedQuestionIds().Value;
+            foreach (var id in questionIds)
+            {
+                usedQuestions.Remove(id);
+            }
+        }
+
+        public void ClearUsedQuestionIds()
+        {
+            GetOrCreateSavedUsedQuestionIds().Value.Clear();
+        }
+
+        public void ClearRedFlagQuestionIds()
+        {
+            GetOrCreateSavedRedFlagQuestionIds().Value.Clear();
+        }
+
+        public void ResetProgress()
+        {
+            GetOrCreateSavedInt(ref _greenFlagCount, "GreenFlagCount", 0).Value = 0;
+            GetOrCreateSavedInt(ref _redFlagCount, "RedFlagCount", 0).Value = 0;
+            GetOrCreateSavedInt(ref _questionsAnswered, "QuestionsAnswered", 0).Value = 0;
+            GetOrCreateSavedBoolList().Value.Clear();
         }
 
         private IMutable<int> GetOrCreateSavedInt(ref IMutable<int> field, string key, int defaultValue)
@@ -143,7 +173,7 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
             return _answeredQuestions;
         }
 
-        private IMutable<MutableList<string>> GetOrCreateSavedStringList()
+        private IMutable<MutableList<string>> GetOrCreateSavedUsedQuestionIds()
         {
             if (_usedQuestionIds == null)
             {
@@ -158,6 +188,23 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
                 }
             }
             return _usedQuestionIds;
+        }
+
+        private IMutable<MutableList<string>> GetOrCreateSavedRedFlagQuestionIds()
+        {
+            if (_redFlagQuestionIds == null)
+            {
+                if (_saveDataProvider != null)
+                {
+                    _redFlagQuestionIds = _saveDataProvider.DeserializeAndCaptureCustomValue<MutableList<string>>(
+                        "Dating/RedFlagQuestionIds", () => new MutableList<string>());
+                }
+                else
+                {
+                    _redFlagQuestionIds = new Mutable<MutableList<string>>(new MutableList<string>());
+                }
+            }
+            return _redFlagQuestionIds;
         }
     }
 }

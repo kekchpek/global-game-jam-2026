@@ -53,7 +53,7 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
             }
             else
             {
-                _model.AddRedFlag();
+                _model.AddRedFlag(currentQuestion.Id);
             }
 
             _model.IncrementQuestionsAnswered();
@@ -81,6 +81,7 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
 
             if (unusedQuestions.Count == 0)
             {
+                _model.ClearUsedQuestionIds();
                 unusedQuestions = _availableQuestions;
             }
 
@@ -96,6 +97,24 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
             return won 
             ? _config.WinDialogues[Random.Range(0, _config.WinDialogues.Count)] 
             : _config.LoseDialogues[Random.Range(0, _config.LoseDialogues.Count)];
+        }
+
+        public void MaskSwap()
+        {
+            // Get at least 2 red flag question IDs
+            var redFlagIds = _model.RedFlagQuestionIds.Take(2).ToList();
+            
+            // Remove them from used questions (so they can appear again)
+            _model.RemoveUsedQuestionIds(redFlagIds);
+            
+            // Clear the red flag tracking
+            _model.ClearRedFlagQuestionIds();
+            
+            // Full reset
+            _model.ResetProgress();
+            
+            // Set state back to playing
+            _model.SetGameState(DatingGameState.Playing);
         }
     }
 }
