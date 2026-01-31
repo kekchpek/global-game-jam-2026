@@ -3,45 +3,216 @@
     "maxRedFlags": 1,
     "maxQuestions": 3,
     "winDialogues":[
-        "Marry me!", 
-        "I love you!", 
-        "I want to be with you!"
+        "You're so cool. Let's go to my place!",
+        "Oh my god, you're my ideal. I'd marry you!",
+        "I think I'm in love. You know me like we've known each other forever!"
     ],
     "loseDialogues":[
-        "Fuck off", 
-        "I'm not interested", 
-        "I'm not sure about that"
+        "Sorry, you're not my type. Too many red flags.",
+        "I think we're done here. Goodbye.",
+        "You're just like the rest. We're not meant to be.",
+        "I don't know who could love you, definitely not me.",
+        "No wonder you're single, with that personality."
     ],
     "questions": [
         {
             "id": "1",
-            "question": "Hello, how are you?",
+            "question": "How much do you earn per year?",
             "options": 
             [
-                { "questionText": "Good", "isCorrect": false, "reactionText": "I'm not sure about that" },
-                { "questionText": "Bad", "isCorrect": false, "reactionText": "I'm not sure about that" },
-                { "questionText": "I'm fine", "isCorrect": false, "reactionText": "I'm not sure about that" },
-                { "questionText": "I'm not fine", "isCorrect": true, "reactionText": "Me too!" }
+                { "questionText": "$50,000", "isCorrect": false, "reactionText": "God… I didn't know you were that broke." },
+                { "questionText": "$240,000", "isCorrect": true, "reactionText": "Wow. So you're a businessman after all." },
+                { "questionText": "$3,000,000", "isCorrect": false, "reactionText": "I don't like it when people lie." }
             ]
         },
         {
             "id": "2",
-            "question": "What is your name?",
+            "question": "So, what kind of dogs do you like?",
             "options": 
             [
-                { "questionText": "John", "isCorrect": false, "reactionText": "I'm not sure about that" },
-                { "questionText": "Pork", "isCorrect": true, "reactionText": "I love pork!" },
-                { "questionText": "Bill", "isCorrect": false, "reactionText": "I'm not sure about that" }
+                { "questionText": "Big and fluffy", "isCorrect": false, "reactionText": "I prefer short-haired dogs." },
+                { "questionText": "Small and annoying", "isCorrect": false, "reactionText": "I don't get the point of small dogs." },
+                { "questionText": "golden retrievers", "isCorrect": true, "reactionText": "Oh… yeah. Same." }
             ]
         },
         {
             "id": "3",
-            "question": "What do you want to eat?",
+            "question": "I have an important question. What's your zodiac sign?",
             "options": 
             [
-                { "questionText": "Whatever you want", "isCorrect": true, "reactionText": "I love whatever you want!" },
-                { "questionText": "Burger", "isCorrect": false, "reactionText": "I'm not sure about that" },
-                { "questionText": "Salad", "isCorrect": false, "reactionText": "I'm not sure about that" }
+                { "questionText": "Taurus", "isCorrect": true, "reactionText": "So you're reliable, like a rock. I like that." },
+                { "questionText": "Scorpio", "isCorrect": false, "reactionText": "That's unfortunate. Scorpios are jealous manipulators." },
+                { "questionText": "Dragon", "isCorrect": false, "reactionText": "A dragon? That's not a zodiac sign." }
+            ]
+        },
+        {
+            "id": "4",
+            "question": "If I feel bad, How will you help me feel better?",
+            "options": 
+            [
+                { "questionText": "Blanket and snacks", "isCorrect": true, "reactionText": "Aww, you're so romantic!" },
+                { "questionText": "Spank a bad girl", "isCorrect": false, "reactionText": "Oh god. That's so cringe." },
+                { "questionText": "Give you space", "isCorrect": false, "reactionText": "I see. Avoidant attachment style." }
+            ]
+        },
+        {
+            "id": "5",
+            "question": "What will you do if you see me with another guy?",
+            "options": 
+            [
+                { "questionText": "Beat you both up", "isCorrect": true, "reactionText": "Ooo, now that's my boy!" },
+                { "questionText": "Disappear quietly", "isCorrect": false, "reactionText": "I don't like cowards." },
+                { "questionText": "Come say hi", "isCorrect": false, "reactionText": "So you have no backbone at all." }
+            ]
+        },
+        {
+            "id": "6",
+            "question": "What will you do if I'm in the shower and the door is unlocked?",
+            "options": 
+            [
+                { "questionText": "Close the door", "isCorrect": false, "reactionText": "I don't like this kind of overprotection." },
+                { "questionText": "Go in with you", "isCorrect": false, "reactionText": "Wow, so funny. That's a red flag for sure." },
+                { "questionText": "i will continue like i didn't notice anyhing", "isCorrect": true, "reactionText": "That's a green flag for sure!" }
+            ]
+        },
+        {
+            "id": "7",
+            "question": "What will you do if I faint?",
+            "options": 
+            [
+                { "questionText": "Call an ambulance", "isCorrect": false, "reactionText": "You're so boring and stiff…" },
+                { "questionText": "Do whatever I want", "isCorrect": false, "reactionText": "That's abuse. You watched too much Fifty Shades of Grey." },
+                { "questionText": "Film and post it", "isCorrect": true, "reactionText": "You're crazy! I love that!" }
+            ]
+        },
+        {
+            "id": "8",
+            "question": "How do you feel about kids?",
+            "options": 
+            [
+                { "questionText": "Childfree", "isCorrect": false, "reactionText": "You sound like another infantile narcissist." },
+                { "questionText": "Dream of a big family", "isCorrect": true, "reactionText": "I'm an only child. I always wanted siblings." },
+                { "questionText": "I'm still a kid myself", "isCorrect": false, "reactionText": "If you think I'm your mommy, you're wrong." }
+            ]
+        },
+        {
+            "id": "9",
+            "question": "How do you imagine the perfect wedding?",
+            "options": 
+            [
+                { "questionText": "Paradise island, just us", "isCorrect": false, "reactionText": "Looks like you have no friends or family issues." },
+                { "questionText": "Rock party", "isCorrect": false, "reactionText": "You didn't look like a rebel in your profile." },
+                { "questionText": "Ceremony in a church", "isCorrect": true, "reactionText": "Yes. A real wedding must be with God." }
+            ]
+        },
+        {
+            "id": "10",
+            "question": "How would you introduce me to your parents?",
+            "options": 
+            [
+                { "questionText": "This is my little lamb", "isCorrect": true, "reactionText": "Oh, so you're spicy after all!" },
+                { "questionText": "My future wife", "isCorrect": false, "reactionText": "That's what anxious attachment looks like." },
+                { "questionText": "My other half", "isCorrect": false, "reactionText": "That sounds emotionally immature." }
+            ]
+        },
+        {
+            "id": "11",
+            "question": "What do you notice first when you meet a girl?",
+            "options": 
+            [
+                { "questionText": "Her body", "isCorrect": true, "reactionText": "Thanks for the compliment." },
+                { "questionText": "Her personality", "isCorrect": false, "reactionText": "Classic move to avoid your own issues." },
+                { "questionText": "sense of humor", "isCorrect": false, "reactionText": "Humor is the best shield for the poor." }
+            ]
+        },
+        {
+            "id": "12",
+            "question": "What will you do if I come back drunk at night?",
+            "options": 
+            [
+                { "questionText": "Wash my face and put me to bed", "isCorrect": false, "reactionText": "Wow. Looks like you're ready to swallow any kind of nonsense." },
+                { "questionText": "Kick you out", "isCorrect": true, "reactionText": "A real man. You know your boundaries." },
+                { "questionText": "Pack my stuff and leave", "isCorrect": false, "reactionText": "And that's it? No emotions at all. So dry." }
+            ]
+        },
+        {
+            "id": "13",
+            "question": "What kind of apartment do you have?",
+            "options": 
+            [
+                { "questionText": "Living with my mom", "isCorrect": true, "reactionText": "Oh god, that's so sweet! A real family man." },
+                { "questionText": "Sharing with friends", "isCorrect": false, "reactionText": "I'm scared to imagine that dorm." },
+                { "questionText": "Penthouse nearby", "isCorrect": false, "reactionText": "Cheap bragging. What penthouse, seriously?" }
+            ]
+        },
+        {
+            "id": "14",
+            "question": "Are you listening?",
+            "options": 
+            [
+                { "questionText": "Podcast mode", "isCorrect": false, "reactionText": "I don't get why guys pretend to be hard to get." },
+                { "questionText": "I hear you. Not sure why", "isCorrect": false, "reactionText": "You sound kind of passive-aggressive." },
+                { "questionText": "Subtitles would help", "isCorrect": true, "reactionText": "Oh, you're witty! I like funny guys." }
+            ]
+        },
+        {
+            "id": "15",
+            "question": "What's your favorite type of cheese?",
+            "options": 
+            [
+                { "questionText": "Mozzarella", "isCorrect": false, "reactionText": "How basic. Let me guess — pineapple pizza too?" },
+                { "questionText": "Brie", "isCorrect": false, "reactionText": "How aristocratic. Very snobby." },
+                { "questionText": "Lactose intolerant", "isCorrect": true, "reactionText": "Oh, same! We can always order the same food." }
+            ]
+        },
+        {
+            "id": "16",
+            "question": "Do you play board games? What's your Monopoly strategy?",
+            "options": 
+            [
+                { "questionText": "Buy transport", "isCorrect": true, "reactionText": "Such an original strategy." },
+                { "questionText": "Rush hotels", "isCorrect": false, "reactionText": "That's how all kids play." },
+                { "questionText": "I don't play board games", "isCorrect": false, "reactionText": "If you hate competition, just say it." }
+            ]
+        },
+        {
+            "id": "17",
+            "question": "What would you name our son?",
+            "options": 
+            [
+                { "questionText": "Edward", "isCorrect": false, "reactionText": "If you mean Twilight, that's a bad choice." },
+                { "questionText": "John", "isCorrect": false, "reactionText": "Zero imagination. You looked more creative in your profile." },
+                { "questionText": "Pork", "isCorrect": true, "reactionText": "Haha, you know the trends. John Pork." }
+            ]
+        },
+        {
+            "id": "18",
+            "question": "How should we split the bill? 50/50?",
+            "options": 
+            [
+                { "questionText": "Sure, as usual", "isCorrect": false, "reactionText": "So petty. Such a scarcity mindset." },
+                { "questionText": "I'll pay", "isCorrect": false, "reactionText": "Classic alpha trying to buy a girl with dinner." },
+                { "questionText": "Girls usually pay for me", "isCorrect": true, "reactionText": "I like that you don't fall for provocations!" }
+            ]
+        },
+        {
+            "id": "19",
+            "question": "Do you have friends? How do you spend time together?",
+            "options": 
+            [
+                { "questionText": "No friends, only exes", "isCorrect": true, "reactionText": "Oh, I feel you. Same here!" },
+                { "questionText": "Video games", "isCorrect": false, "reactionText": "I didn't know you were still in school." },
+                { "questionText": "Gym", "isCorrect": false, "reactionText": "I don't like gym bros. They're all narcissists." }
+            ]
+        },
+        {
+            "id": "20",
+            "question": "Do you think a girl in a relationship can go clubbing?",
+            "options": 
+            [
+                { "questionText": "Only with her boyfriend", "isCorrect": false, "reactionText": "That sounds like tyranny." },
+                { "questionText": "Yes, with good people", "isCorrect": true, "reactionText": "Agreed. Real relationships are built on trust." },
+                { "questionText": "No, clubs are pointless", "isCorrect": false, "reactionText": "That's how girls turn into boring plants." }
             ]
         }
     ]
