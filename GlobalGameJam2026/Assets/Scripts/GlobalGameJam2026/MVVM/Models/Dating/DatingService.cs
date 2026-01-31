@@ -15,7 +15,7 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
         private readonly IAssetsModel _assetsModel;
         private DialogueConfig _config;
         private List<DialogueQuestionData> _availableQuestions;
-        private HashSet<string> _usedQuestionIds = new HashSet<string>();
+        private HashSet<string> _usedQuestionIds;
 
         public DatingService(
             IDatingMutableModel model,
@@ -23,6 +23,7 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
         {
             _model = model;
             _assetsModel = assetsModel;
+            _usedQuestionIds = new HashSet<string>();
         }
 
         public async UniTask Initialize()
@@ -30,29 +31,24 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
             var configJson = await _assetsModel.LoadAsset<TextAsset>(DialogueConfigPath);
             _config = JsonConvert.DeserializeObject<DialogueConfig>(configJson.text);
             _assetsModel.ReleaseLoadedAssets(DialogueConfigPath);
-            _availableQuestions = new List<DialogueQuestionData>(_config.Questions);
 
             _model.SetMaxRedFlags(_config.MaxRedFlags);
             _model.SetMaxQuestions(_config.MaxQuestions);
-            SelectNextQuestion();
+            _availableQuestions = new List<DialogueQuestionData>(_config.Questions);
         }
 
         public bool SelectAnswer(int optionIndex)
         {
-            if (_model.GameState.Value != DatingGameState.Playing)
-            {
-                return;
-            }
-
             var currentQuestion = _model.CurrentQuestion.Value;
             if (currentQuestion == null || optionIndex < 0 || optionIndex >= currentQuestion.Options.Count)
             {
-                return;
+                return false;
             }
 
             var selectedOption = currentQuestion.Options[optionIndex];
-            
-            if (selectedOption.IsCorrect)
+            var isCorrect = selectedOption.IsCorrect;
+
+            if (isCorrect)
             {
                 _model.AddGreenFlag();
             }
@@ -67,25 +63,24 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
             {
                 _model.SetGameState(DatingGameState.Lost);
             }
-
-            if (_model.QuestionsAnswered.Value >= _model.MaxQuestions.Value)
+            else if (_model.QuestionsAnswered.Value >= _model.MaxQuestions.Value)
             {
                 _model.SetGameState(DatingGameState.Won);
             }
 
-            return selectedOption.IsCorrect;
+            return isCorrect;
         }
 
         public void SelectNextQuestion()
         {
-            if (_availableQuestions.Count == 0)
+            if (_availableQuestions == null || _availableQuestions.Count == 0)
             {
                 _availableQuestions = new List<DialogueQuestionData>(_config.Questions);
                 _usedQuestionIds.Clear();
             }
 
             var unusedQuestions = _availableQuestions.FindAll(q => !_usedQuestionIds.Contains(q.Id));
-            
+
             if (unusedQuestions.Count == 0)
             {
                 _usedQuestionIds.Clear();
@@ -94,7 +89,7 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
 
             var randomIndex = Random.Range(0, unusedQuestions.Count);
             var selectedQuestion = unusedQuestions[randomIndex];
-            
+
             _usedQuestionIds.Add(selectedQuestion.Id);
             _model.SetCurrentQuestion(selectedQuestion);
         }
