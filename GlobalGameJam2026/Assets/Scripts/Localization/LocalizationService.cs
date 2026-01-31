@@ -14,7 +14,6 @@ namespace kekchpek.Localization
         private static readonly IReadOnlyList<string> Locales = new[]
         {
             "EN",
-            "RU"
         };
 
         private readonly ILocalizationMutableModel _localizationMutableModel;

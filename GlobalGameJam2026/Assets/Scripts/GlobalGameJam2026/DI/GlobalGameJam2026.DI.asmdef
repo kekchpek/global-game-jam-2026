@@ -1,10 +1,12 @@
 {
-    "name": "GlobalGameJam2026",
-    "rootNamespace": "GlobalGameJam2026",
+    "name": "GlobalGameJam2026.DI",
+    "rootNamespace": "GlobalGameJam2026.DI",
     "references": [
+        "GUID:a69e7f0330ea94fc891b30968f20654f",
+        "GUID:cc14affc63b616240abcb51609d36d6a",
         "GUID:0d8beb7f090555447a6cf5ce9e54dbb4",
-        "GUID:f51ebe6a0ceec4240a699833d6309b23",
-        "GUID:6055be8ebefd69e48b49212b09b47b2f"
+        "GUID:211663739eeff433a890adb62e083b01",
+        "GUID:36cc49182d78f364fbfb814562105991"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

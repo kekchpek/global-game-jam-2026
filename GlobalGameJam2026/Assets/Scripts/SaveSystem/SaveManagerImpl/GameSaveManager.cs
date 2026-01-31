@@ -23,6 +23,16 @@ namespace kekchpek.GameSaves
 {
     public class GameSaveManager : IGameSaveController, IGameSaveManager
     {
+
+        private const string DataFolder = "Data";
+        private const string SaveFolder = "Save";
+        private const string SettingsSaveFile = "Settings";
+        private const string CommonSaveFile = "Common";
+        private const int AutosaveIntervalMs = 10000;
+        private const int SettingsDebounceIntervalMs = 5000;
+        private const int CommonDataDebounceIntervalMs = 5000;
+        private const bool AutosaveEnabled = false;
+
         private readonly Mutable<bool> _isInitialized = new(false);
         private const string SelectedProfileKey = "SelectedProfile";
         private const string SaveConfigPath = "Configs/SaveConfig";
@@ -35,8 +45,6 @@ namespace kekchpek.GameSaves
         private readonly IApplicationService _applicationService;
         private readonly IAssetsModel _assetsModel;
         private readonly ITimeManager _timeManager;
-
-        private SaveConfig _config;
 
         private IMutable<string> _selectedProfile;
 
@@ -53,12 +61,8 @@ namespace kekchpek.GameSaves
 
         public async UniTask Initialize() {
             Debug.Log("[GameSaveManager] Initializing save system...");
-            var configJson = await _assetsModel.LoadAsset<TextAsset>(SaveConfigPath);
-            _config = JsonConvert.DeserializeObject<SaveConfig>(configJson.text);
-            StaticBufferPool.Prewarm(_config.PrewarmedBuffers);
-            
-            var savePath = Application.persistentDataPath + "/" + _config.DataFolder;
-            var gameSavePath = savePath + "/" + _config.SaveFolder;
+            var savePath = Application.persistentDataPath + "/" + DataFolder;
+            var gameSavePath = savePath + "/" + SaveFolder;
             
             Debug.Log($"[GameSaveManager] Setting up save paths:\n" +
                      $"Game saves: {gameSavePath}\n" +
@@ -69,11 +73,11 @@ namespace kekchpek.GameSaves
             _commonDataSaveManager = new FileSaveManager(savePath);
 
             _assetsModel.ReleaseLoadedAssets(SaveConfigPath);
-            _settingsSaveManager.LoadOrCreate(_config.SettingsSaveFile);
-            _commonDataSaveManager.LoadOrCreate(_config.CommonSaveFile);
-            _commonDataSaveManager.SaveOnChangesDebounceMs = (int)_config.CommonDataDebounceIntervalMs;
+            _settingsSaveManager.LoadOrCreate(SettingsSaveFile);
+            _commonDataSaveManager.LoadOrCreate(CommonSaveFile);
+            _commonDataSaveManager.SaveOnChangesDebounceMs = CommonDataDebounceIntervalMs;
             _commonDataSaveManager.MaxSaveOnChangesTimeMs = 100000000;
-            _settingsSaveManager.SaveOnChangesDebounceMs = (int)_config.SettingsDebounceIntervalMs;
+            _settingsSaveManager.SaveOnChangesDebounceMs = SettingsDebounceIntervalMs;
             _settingsSaveManager.MaxSaveOnChangesTimeMs = 100000000;
 
             _settingsSaveManager.SaveOnChangesEnabled = true;
@@ -87,7 +91,7 @@ namespace kekchpek.GameSaves
             RegisterCodecs();
 
             // Launches the autosave
-            if (_config.AutosaveEnabled)
+            if (AutosaveEnabled)
                 Autosave();
 
             _isInitialized.Value = true;
@@ -154,7 +158,7 @@ namespace kekchpek.GameSaves
             {
                 Debug.LogWarning("[GameSaveManager] Skipping autosave - no profile selected");
             }
-            _timeManager.AddCallbackIn(_config.AutosaveIntervalMs * TimeSpan.TicksPerMillisecond, Autosave);
+            _timeManager.AddCallbackIn(AutosaveIntervalMs * TimeSpan.TicksPerMillisecond, Autosave);
         }
 
         string IGameSaveController.CurrentSaveId => _gameSaveManager.CurrentSaveId;
@@ -215,7 +219,7 @@ namespace kekchpek.GameSaves
             {
                 return provider;
             }
-            var newProvider = new FileSaveManager(Application.persistentDataPath + "/" + _config.DataFolder);
+            var newProvider = new FileSaveManager(Application.persistentDataPath + "/" + DataFolder);
             newProvider.LoadOrCreate(dataName);
             _exclusiveDataProviders.Add(dataName, newProvider);
             return newProvider;

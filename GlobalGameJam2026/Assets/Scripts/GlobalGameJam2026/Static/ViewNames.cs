@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 
 namespace GlobalGameJam2026.Static
 {
-    public static class ViewNames
+    public static class LayerNames
     {
-        public const string DatingScreen = "DatingScreen";
+        public const string Screen = "ScreenLayer";
+        public const string Popup = "PopupLayer";
 
     }
 }
