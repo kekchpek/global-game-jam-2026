@@ -32,12 +32,41 @@ namespace GlobalGameJam2026.MVVM.Views.RedFlagsIndicator
                 _stepsObjects[i] = Instantiate(_stepPrefab, _stepsContainer);
             }
             
-            // Set first step as current
-            _currentStepIndex = 0;
-            if (_stepsObjects.Length > 0)
+            // Initialize all steps instantly based on current state
+            InitializeStepsInstant();
+        }
+
+        private void InitializeStepsInstant()
+        {
+            var steps = ViewModel.Steps.Value;
+            
+            for (int i = 0; i < _stepsObjects.Length; i++)
             {
-                _stepsObjects[0].SetCurrentInstant();
+                if (i < steps.Count)
+                {
+                    // Already completed step - set instantly
+                    if (steps[i])
+                    {
+                        _stepsObjects[i].SetCorrectInstant();
+                    }
+                    else
+                    {
+                        _stepsObjects[i].SetIncorrectInstant();
+                    }
+                }
+                else if (i == steps.Count)
+                {
+                    // Current step
+                    _stepsObjects[i].SetCurrentInstant();
+                }
+                else
+                {
+                    // Not reached yet
+                    _stepsObjects[i].SetNotReached();
+                }
             }
+            
+            _currentStepIndex = steps.Count;
         }
 
         /// <summary>

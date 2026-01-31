@@ -40,6 +40,7 @@ namespace GlobalGameJam2026.MVVM.Views.DialogueQuestion
             }
             
             _bubbleContainer.SetActive(false);
+            _displayText.text = string.Empty;
         }
 
         /// <summary>

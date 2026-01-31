@@ -62,15 +62,21 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
             {
                 await _questionView.TypeText(flowData.ReactionText);
             }
+
+            await UniTask.WaitForSeconds(0.5f);
             
             // Step 5: Show checkmark or red flag
             await _redFlagsView.ShowResult(flowData.IsCorrect);
+
+            await UniTask.WaitForSeconds(0.5f);
             
             // Step 6: Type next question
             if (!string.IsNullOrEmpty(flowData.NextQuestionText))
             {
                 await _questionView.TypeText(flowData.NextQuestionText);
             }
+
+            await UniTask.WaitForSeconds(1f);
             
             // Step 7: Set and show answer options (if game continues)
             if (!flowData.IsGameEnd && flowData.NextOptions != null && flowData.NextOptions.Count > 0)
@@ -78,16 +84,23 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
                 _optionsView.SetOptions(flowData.NextOptions);
                 await _optionsView.ShowOptions();
             }
+
+            await UniTask.WaitForSeconds(4f);
             
             // Notify ViewModel that flow is complete
             ViewModel.OnAnswerFlowComplete();
         }
 
+        protected override void OnViewModelClear()
+        {
+            ViewModel.AnswerFlowStarted -= OnAnswerFlowStarted;
+            base.OnViewModelClear();
+        }
+
         protected override void OnDestroy()
         {
-            base.OnDestroy();
-            ViewModel.AnswerFlowStarted -= OnAnswerFlowStarted;
             _optionsView.OptionSelected -= OnOptionSelected;
+            base.OnDestroy();
         }
     }
 }

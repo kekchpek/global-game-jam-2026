@@ -15,7 +15,6 @@ namespace GlobalGameJam2026.MVVM.Views.RedFlagsIndicator.Components
     public class RedFlagStepComponent : MonoBehaviour
     {
         [SerializeField] private AnimationController _animationController;
-        [SerializeField] private GameObject _unreachedLayout;
         [SerializeField] private GameObject _currentLayout;
         [SerializeField] private GameObject _correctLayout;
         [SerializeField] private GameObject _incorrectLayout;
@@ -27,7 +26,7 @@ namespace GlobalGameJam2026.MVVM.Views.RedFlagsIndicator.Components
             if (CurrentState == RedFlagState.Current) return;
             CurrentState = RedFlagState.Current;
             
-            HideAll();
+            HideOverlays();
             _currentLayout.SetActive(true);
             
             await PlayAnimation("Current");
@@ -38,7 +37,8 @@ namespace GlobalGameJam2026.MVVM.Views.RedFlagsIndicator.Components
             if (CurrentState == RedFlagState.Correct) return;
             CurrentState = RedFlagState.Correct;
             
-            HideAll();
+            // Keep CurrentLayout visible, only hide incorrect
+            _incorrectLayout.SetActive(false);
             _correctLayout.SetActive(true);
             
             await PlayAnimation("Correct");
@@ -49,7 +49,8 @@ namespace GlobalGameJam2026.MVVM.Views.RedFlagsIndicator.Components
             if (CurrentState == RedFlagState.Incorrect) return;
             CurrentState = RedFlagState.Incorrect;
             
-            HideAll();
+            // Keep CurrentLayout visible, only hide correct
+            _correctLayout.SetActive(false);
             _incorrectLayout.SetActive(true);
             
             await PlayAnimation("Incorrect");
@@ -58,20 +59,36 @@ namespace GlobalGameJam2026.MVVM.Views.RedFlagsIndicator.Components
         public void SetCurrentInstant()
         {
             CurrentState = RedFlagState.Current;
-            HideAll();
+            HideOverlays();
             _currentLayout.SetActive(true);
+        }
+
+        public void SetCorrectInstant()
+        {
+            CurrentState = RedFlagState.Correct;
+            // Keep CurrentLayout visible
+            _incorrectLayout.SetActive(false);
+            _currentLayout.SetActive(true);
+            _correctLayout.SetActive(true);
+        }
+
+        public void SetIncorrectInstant()
+        {
+            CurrentState = RedFlagState.Incorrect;
+            // Keep CurrentLayout visible
+            _correctLayout.SetActive(false);
+            _currentLayout.SetActive(true);
+            _incorrectLayout.SetActive(true);
         }
 
         public void SetNotReached()
         {
             CurrentState = RedFlagState.None;
-            HideAll();
-            _unreachedLayout.SetActive(true);
+            HideOverlays();
         }
 
-        private void HideAll()
+        private void HideOverlays()
         {
-            _unreachedLayout.SetActive(false);
             _currentLayout.SetActive(false);
             _correctLayout.SetActive(false);
             _incorrectLayout.SetActive(false);
