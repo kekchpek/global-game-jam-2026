@@ -1,6 +1,9 @@
+using System;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using GlobalGameJam2026.MVVM.Models.Dating.Data;
 using GlobalGameJam2026.MVVM.Views.DialogueOptions.Components;
+using kekchpek.Auxiliary;
 using UnityEngine;
 using UnityMVVM;
 
@@ -8,29 +11,50 @@ namespace GlobalGameJam2026.MVVM.Views.DialogueOptions
 {
     public class DialogueOptionsView : ViewBehaviour<IDialogueOptionsViewModel>
     {
+        private const string ShowSequence = "Show";
+        private const string HideSequence = "Hide";
+        
         [SerializeField] private DialogueOptionComponent _optionPrefab;
         [SerializeField] private Transform _optionsContainer;
+        [SerializeField] private AnimationController _animationController;
         
         private readonly List<DialogueOptionComponent> _optionComponents = new List<DialogueOptionComponent>();
+        
+        public event Action<int> OptionSelected;
 
-        protected override void OnViewModelSet()
+        /// <summary>
+        /// Shows options with animation.
+        /// </summary>
+        public async UniTask ShowOptions()
         {
-            base.OnViewModelSet();
-            SmartBind(ViewModel.Options, OnOptionsChanged);
+            _optionsContainer.gameObject.SetActive(true);
+            
+            if (_animationController != null && _animationController.HasSequence(ShowSequence))
+            {
+                await _animationController.PlaySequence(ShowSequence);
+            }
         }
 
-        private void OnOptionsChanged()
+        /// <summary>
+        /// Hides options with animation.
+        /// </summary>
+        public async UniTask HideOptions()
+        {
+            if (_animationController != null && _animationController.HasSequence(HideSequence))
+            {
+                await _animationController.PlaySequence(HideSequence);
+            }
+            
+            _optionsContainer.gameObject.SetActive(false);
+        }
+
+        /// <summary>
+        /// Sets the options data and creates UI elements.
+        /// </summary>
+        public void SetOptions(IReadOnlyList<DialogueOptionData> options)
         {
             ClearOptions();
-            CreateOptions(ViewModel.Options.Value);
-            if (ViewModel.Options.Value.Count == 0)
-            {
-                _optionsContainer.gameObject.SetActive(false);
-            }
-            else
-            {
-                _optionsContainer.gameObject.SetActive(true);
-            }
+            CreateOptions(options);
         }
 
         private void ClearOptions()
@@ -54,7 +78,7 @@ namespace GlobalGameJam2026.MVVM.Views.DialogueOptions
 
         private void OnOptionSelected(int optionIndex)
         {
-            ViewModel.SelectOption(optionIndex);
+            OptionSelected?.Invoke(optionIndex);
         }
     }
 }

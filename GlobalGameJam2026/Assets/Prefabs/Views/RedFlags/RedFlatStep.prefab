@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6594249380500859041
 RectTransform:
   m_ObjectHideFlags: 0
@@ -167,7 +167,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8279342390948664955
 RectTransform:
   m_ObjectHideFlags: 0
@@ -280,6 +280,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: GlobalGameJam2026::GlobalGameJam2026.MVVM.Views.RedFlagsIndicator.Components.RedFlagStepComponent
   _animationController: {fileID: 7029268889756936903}
+  _unreachedLayout: {fileID: 7958624456896954864}
+  _currentLayout: {fileID: 4052942584555148699}
+  _correctLayout: {fileID: 5859916647769094183}
+  _incorrectLayout: {fileID: 2382357244473961860}
 --- !u!114 &7029268889756936903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,19 +332,7 @@ MonoBehaviour:
       AnimationName: 
       SpineAnimationLayer: 0
       TargetAnimationController: {fileID: 0}
-      TargetSequenceName: 
-  - SequenceName: Idle
-    Animations:
-    - Type: 0
-      ExecuteInParallel: 0
-      UnityAnimator: {fileID: 4394048920870800062}
-      AnimationStateName: Idle
-      SpineSkeleton: {fileID: 0}
-      SpineSkeletonAnimation: {fileID: 0}
-      AnimationName: 
-      SpineAnimationLayer: 0
-      TargetAnimationController: {fileID: 0}
-      TargetSequenceName: 
+      TargetSequenceName:
 --- !u!95 &4394048920870800062
 Animator:
   serializedVersion: 7

@@ -18,10 +18,8 @@ namespace GlobalGameJam2026.MVVM.Views.RedFlagsIndicator
         public RedFlagsIndicatorViewModel(IDatingModel datingModel)
         {
             _datingModel = datingModel;
-            
             _datingModel.MaxQuestions.Bind(OnMaxQuestionsChanged);
             _datingModel.AnsweredQuestions.LastAdded.Bind(OnAnsweredQuestionsChanged);
-            UpdateSteps();
         }
 
         private void OnMaxQuestionsChanged(int maxQuestions)
@@ -30,11 +28,6 @@ namespace GlobalGameJam2026.MVVM.Views.RedFlagsIndicator
         }
 
         private void OnAnsweredQuestionsChanged(bool _)
-        {
-            UpdateSteps();
-        }
-
-        private void UpdateSteps()
         {
             _steps.ForceSet(_datingModel.AnsweredQuestions);
         }
