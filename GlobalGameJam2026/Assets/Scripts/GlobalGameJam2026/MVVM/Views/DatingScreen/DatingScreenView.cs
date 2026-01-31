@@ -3,6 +3,7 @@ using GlobalGameJam2026.MVVM.Views.DialogueOptions;
 using GlobalGameJam2026.MVVM.Views.DialogueQuestion;
 using GlobalGameJam2026.MVVM.Views.RedFlagsIndicator;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityMVVM;
 
 namespace GlobalGameJam2026.MVVM.Views.DatingScreen
@@ -12,6 +13,9 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
         [SerializeField] private DialogueQuestionView _questionView;
         [SerializeField] private DialogueOptionsView _optionsView;
         [SerializeField] private RedFlagsIndicatorView _redFlagsView;
+        [SerializeField] private Button _nextButton;
+
+        private UniTaskCompletionSource _nextButtonTcs;
 
         protected override void OnViewModelSet()
         {
@@ -19,10 +23,19 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
             
             ViewModel.AnswerFlowStarted += OnAnswerFlowStarted;
             _optionsView.OptionSelected += OnOptionSelected;
+            _nextButton.onClick.AddListener(OnNextButtonClicked);
+            
+            // Hide next button initially
+            _nextButton.gameObject.SetActive(false);
             
             // Initialize first question
             SmartBind(ViewModel.CurrentQuestionText, OnCurrentQuestionTextChanged);
             SmartBind(ViewModel.CurrentOptions, OnCurrentOptionsChanged);
+        }
+
+        private void OnNextButtonClicked()
+        {
+            _nextButtonTcs?.TrySetResult();
         }
 
         private void OnCurrentQuestionTextChanged()
@@ -68,7 +81,11 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
             // Step 5: Show checkmark or red flag
             await _redFlagsView.ShowResult(flowData.IsCorrect);
 
-            await UniTask.WaitForSeconds(0.5f);
+            // Step 5.5: Wait for Next button click
+            _nextButtonTcs = new UniTaskCompletionSource();
+            _nextButton.gameObject.SetActive(true);
+            await _nextButtonTcs.Task;
+            _nextButton.gameObject.SetActive(false);
             
             // Step 6: Type next question
             if (!string.IsNullOrEmpty(flowData.NextQuestionText))
@@ -84,8 +101,14 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
                 _optionsView.SetOptions(flowData.NextOptions);
                 await _optionsView.ShowOptions();
             }
-
-            await UniTask.WaitForSeconds(4f);
+            else
+            {
+                await UniTask.WaitForSeconds(1.5f);
+                _nextButtonTcs = new UniTaskCompletionSource();
+                _nextButton.gameObject.SetActive(true);
+                await _nextButtonTcs.Task;
+                _nextButton.gameObject.SetActive(false);
+            }
             
             // Notify ViewModel that flow is complete
             ViewModel.OnAnswerFlowComplete();
@@ -100,6 +123,7 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
         protected override void OnDestroy()
         {
             _optionsView.OptionSelected -= OnOptionSelected;
+            _nextButton.onClick.RemoveListener(OnNextButtonClicked);
             base.OnDestroy();
         }
     }
