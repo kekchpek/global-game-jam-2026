@@ -7,12 +7,14 @@ using GlobalGameJam2026.MVVM.Models.Dating.Data;
 using GlobalGameJam2026.MVVM.Views.DatingScreen;
 using kekchpek.Auxiliary.Contexts;
 using UnityMVVM.ViewModelCore;
+using Zenject;
 
 namespace GlobalGameJam2026.MVVM.Views.DialogueOptions
 {
     public class DialogueOptionsViewModel : ViewModel, 
         IDialogueOptionsViewModel, 
-        IContextSelectorViewModel<GirlReactionContext>
+        IContextSelectorViewModel<GirlReactionContext>,
+        IInitializable
     {
         private readonly IDatingModel _datingModel;
         private readonly IDatingService _datingService;
@@ -28,7 +30,10 @@ namespace GlobalGameJam2026.MVVM.Views.DialogueOptions
         {
             _datingModel = datingModel;
             _datingService = datingService;
-            
+        }
+
+        public void Initialize()
+        {
             _datingModel.CurrentQuestion.Bind(OnCurrentQuestionChanged);
         }
 
