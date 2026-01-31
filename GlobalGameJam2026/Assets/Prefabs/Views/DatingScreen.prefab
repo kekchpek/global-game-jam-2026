@@ -668,10 +668,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d5b4319b6144b84aa96ef2238662a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GlobalGameJam2026::GlobalGameJam2026.MVVM.Views.DatingScreen.DatingScreenView
-  _endScreenPanel: {fileID: 0}
-  _winContent: {fileID: 0}
-  _loseContent: {fileID: 0}
-  _endDialogueText: {fileID: 904108333367345478}
 --- !u!1 &6102755302234514874
 GameObject:
   m_ObjectHideFlags: 0

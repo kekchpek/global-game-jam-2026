@@ -58,14 +58,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 3633503451578214408, guid: ca683c247ef0f4007a50ab757ab697f0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -92,7 +92,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2987213654719710486
 RectTransform:
   m_ObjectHideFlags: 0
@@ -133,14 +133,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9065224, g: 1, b: 0.43867922, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 359998337175102873, guid: 5fc0b3bf55890402392f502717c55e0b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -208,16 +208,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.10201049, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 2780540300400067551, guid: 8c4dc5c748c2b4bf6822506a42480b1e, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -235,6 +235,8 @@ GameObject:
   m_Component:
   - component: {fileID: 263254946537451134}
   - component: {fileID: 618004124203637345}
+  - component: {fileID: 7029268889756936903}
+  - component: {fileID: 4394048920870800062}
   m_Layer: 0
   m_Name: RedFlatStep
   m_TagString: Untagged
@@ -277,10 +279,90 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cbdbcb7e54ed4e189a7c1e23e744e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GlobalGameJam2026::GlobalGameJam2026.MVVM.Views.RedFlagsIndicator.Components.RedFlagStepComponent
-  _currentLayout: {fileID: 4052942584555148699}
-  _correctLayout: {fileID: 5859916647769094183}
-  _incorrectLayout: {fileID: 2382357244473961860}
-  _notReachedLayout: {fileID: 7958624456896954864}
+  _animationController: {fileID: 7029268889756936903}
+--- !u!114 &7029268889756936903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6218114370124938392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 867fa0547d7df694f8e78716e7d57cbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: kekchpek.AnimationController::kekchpek.Auxiliary.AnimationController
+  _sequences:
+  - SequenceName: Correct
+    Animations:
+    - Type: 0
+      ExecuteInParallel: 0
+      UnityAnimator: {fileID: 4394048920870800062}
+      AnimationStateName: Win
+      SpineSkeleton: {fileID: 0}
+      SpineSkeletonAnimation: {fileID: 0}
+      AnimationName: 
+      SpineAnimationLayer: 0
+      TargetAnimationController: {fileID: 0}
+      TargetSequenceName: 
+  - SequenceName: Incorrect
+    Animations:
+    - Type: 0
+      ExecuteInParallel: 0
+      UnityAnimator: {fileID: 4394048920870800062}
+      AnimationStateName: Lose
+      SpineSkeleton: {fileID: 0}
+      SpineSkeletonAnimation: {fileID: 0}
+      AnimationName: 
+      SpineAnimationLayer: 0
+      TargetAnimationController: {fileID: 0}
+      TargetSequenceName: 
+  - SequenceName: Current
+    Animations:
+    - Type: 0
+      ExecuteInParallel: 0
+      UnityAnimator: {fileID: 4394048920870800062}
+      AnimationStateName: Current
+      SpineSkeleton: {fileID: 0}
+      SpineSkeletonAnimation: {fileID: 0}
+      AnimationName: 
+      SpineAnimationLayer: 0
+      TargetAnimationController: {fileID: 0}
+      TargetSequenceName: 
+  - SequenceName: Idle
+    Animations:
+    - Type: 0
+      ExecuteInParallel: 0
+      UnityAnimator: {fileID: 4394048920870800062}
+      AnimationStateName: Idle
+      SpineSkeleton: {fileID: 0}
+      SpineSkeletonAnimation: {fileID: 0}
+      AnimationName: 
+      SpineAnimationLayer: 0
+      TargetAnimationController: {fileID: 0}
+      TargetSequenceName: 
+--- !u!95 &4394048920870800062
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6218114370124938392}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 690532855fe3de6428a26c3ad99f9466, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7958624456896954864
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,14 +421,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 359998337175102873, guid: 5fc0b3bf55890402392f502717c55e0b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

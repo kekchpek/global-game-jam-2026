@@ -1,42 +1,43 @@
 using UnityEngine;
+using kekchpek.Auxiliary;
 
 namespace GlobalGameJam2026.MVVM.Views.RedFlagsIndicator.Components
 {
+    public enum RedFlagState
+    {
+        None,
+        Current,
+        Correct,
+        Incorrect
+    }
+    
     public class RedFlagStepComponent : MonoBehaviour
     {
-
-        [SerializeField] private GameObject _currentLayout;
-        [SerializeField] private GameObject _correctLayout;
-        [SerializeField] private GameObject _incorrectLayout;
-        [SerializeField] private GameObject _notReachedLayout;
-
+        [SerializeField] private AnimationController _animationController;
+        
+        public RedFlagState CurrentState { get; private set; } = RedFlagState.None;
 
         public void SetCurrent() {
-            _correctLayout.SetActive(false);
-            _incorrectLayout.SetActive(false);
-            _notReachedLayout.SetActive(false);
-            _currentLayout.SetActive(true);
+            if (CurrentState == RedFlagState.Current) return;
+            CurrentState = RedFlagState.Current;
+            PlayAnimation("Current");
         }
 
         public void SetCorrect() {
-            _currentLayout.SetActive(false);
-            _correctLayout.SetActive(true);
-            _incorrectLayout.SetActive(false);
-            _notReachedLayout.SetActive(false);
+            if (CurrentState == RedFlagState.Correct) return;
+            CurrentState = RedFlagState.Correct;
+            PlayAnimation("Correct");
         }
         
         public void SetIncorrect() {
-            _currentLayout.SetActive(false);
-            _correctLayout.SetActive(false);
-            _incorrectLayout.SetActive(true);
-            _notReachedLayout.SetActive(false);
+            if (CurrentState == RedFlagState.Incorrect) return;
+            CurrentState = RedFlagState.Incorrect;
+            PlayAnimation("Incorrect");
         }
-        
-        public void SetNotReached() {
-            _currentLayout.SetActive(false);
-            _correctLayout.SetActive(false);
-            _incorrectLayout.SetActive(false);
-            _notReachedLayout.SetActive(true);
+
+        private void PlayAnimation(string animationName) {
+            _animationController.InterruptCurrentAnimation();
+            _animationController.PlaySequence(animationName);
         }
     }
 }

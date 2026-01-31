@@ -59,10 +59,6 @@ namespace GlobalGameJam2026.MVVM.Views.RedFlagsIndicator
                 {
                     _stepsObjects[i].SetCurrent();
                 }
-                else
-                {
-                    _stepsObjects[i].SetNotReached();
-                }
             }
         }
     }
