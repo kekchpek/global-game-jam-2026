@@ -1,5 +1,6 @@
 using AsyncReactAwait.Bindable;
 using GlobalGameJam2026.MVVM.Models.Dating.Data;
+using kekchpek.Auxiliary.ReactiveList;
 
 namespace GlobalGameJam2026.MVVM.Models.Dating
 {
@@ -12,6 +13,7 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
         private readonly Mutable<int> _maxQuestions = new(0);
         private readonly Mutable<int> _questionsAnswered = new(0);
         private readonly Mutable<DatingGameState> _gameState = new(DatingGameState.Playing);
+        private readonly MutableList<bool> _answeredQuestions = new();
 
         public IBindable<DialogueQuestionData> CurrentQuestion => _currentQuestion;
         public IBindable<int> GreenFlagCount => _greenFlagCount;
@@ -20,6 +22,7 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
         public IBindable<int> MaxQuestions => _maxQuestions;
         public IBindable<int> QuestionsAnswered => _questionsAnswered;
         public IBindable<DatingGameState> GameState => _gameState;
+        public IBindableList<bool> AnsweredQuestions => _answeredQuestions;
 
         public void SetCurrentQuestion(DialogueQuestionData question)
         {
@@ -29,11 +32,13 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
         public void AddGreenFlag()
         {
             _greenFlagCount.Value++;
+            _answeredQuestions.Add(true);
         }
 
         public void AddRedFlag()
         {
             _redFlagCount.Value++;
+            _answeredQuestions.Add(false);
         }
 
         public void SetMaxRedFlags(int maxRedFlags)
@@ -54,15 +59,6 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
         public void SetGameState(DatingGameState state)
         {
             _gameState.Value = state;
-        }
-
-        public void Reset()
-        {
-            _currentQuestion.Value = null;
-            _greenFlagCount.Value = 0;
-            _redFlagCount.Value = 0;
-            _questionsAnswered.Value = 0;
-            _gameState.Value = DatingGameState.Playing;
         }
     }
 }

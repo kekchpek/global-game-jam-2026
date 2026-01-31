@@ -37,7 +37,7 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
             SelectNextQuestion();
         }
 
-        public void SelectAnswer(int optionIndex)
+        public bool SelectAnswer(int optionIndex)
         {
             if (_model.GameState.Value != DatingGameState.Playing)
             {
@@ -66,19 +66,17 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
             if (_model.RedFlagCount.Value >= _model.MaxRedFlags.Value)
             {
                 _model.SetGameState(DatingGameState.Lost);
-                return;
             }
 
             if (_model.QuestionsAnswered.Value >= _model.MaxQuestions.Value)
             {
                 _model.SetGameState(DatingGameState.Won);
-                return;
             }
 
-            SelectNextQuestion();
+            return selectedOption.IsCorrect;
         }
 
-        private void SelectNextQuestion()
+        public void SelectNextQuestion()
         {
             if (_availableQuestions.Count == 0)
             {

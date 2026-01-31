@@ -1,5 +1,6 @@
 using AsyncReactAwait.Bindable;
 using GlobalGameJam2026.MVVM.Models.Dating.Data;
+using kekchpek.Auxiliary.ReactiveList;
 
 namespace GlobalGameJam2026.MVVM.Models.Dating
 {
@@ -12,5 +13,6 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
         IBindable<int> MaxQuestions { get; }
         IBindable<int> QuestionsAnswered { get; }
         IBindable<DatingGameState> GameState { get; }
+        IBindableList<bool> AnsweredQuestions { get; }
     }
 }

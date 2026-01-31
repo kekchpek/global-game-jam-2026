@@ -8,10 +8,10 @@
             "question": "Hello, how are you?",
             "options": 
             [
-                { "text": "Good", "isCorrect": false },
-                { "text": "Bad", "isCorrect": false },
-                { "text": "I'm fine", "isCorrect": false },
-                { "text": "I'm not fine", "isCorrect": true }
+                { "questionText": "Good", "isCorrect": false, "reactionText": "I'm not sure about that" },
+                { "questionText": "Bad", "isCorrect": false, "reactionText": "I'm not sure about that" },
+                { "questionText": "I'm fine", "isCorrect": false, "reactionText": "I'm not sure about that" },
+                { "questionText": "I'm not fine", "isCorrect": true, "reactionText": "Me too!" }
             ]
         },
         {
@@ -19,9 +19,9 @@
             "question": "What is your name?",
             "options": 
             [
-                { "text": "John", "isCorrect": false },
-                { "text": "Pork", "isCorrect": true },
-                { "text": "Bill", "isCorrect": false }
+                { "questionText": "John", "isCorrect": false, "reactionText": "I'm not sure about that" },
+                { "questionText": "Pork", "isCorrect": true, "reactionText": "I love pork!" },
+                { "questionText": "Bill", "isCorrect": false, "reactionText": "I'm not sure about that" }
             ]
         },
         {
@@ -29,9 +29,9 @@
             "question": "What do you want to eat?",
             "options": 
             [
-                { "text": "Whatever you want", "isCorrect": true },
-                { "text": "Burger", "isCorrect": false },
-                { "text": "Salad", "isCorrect": false }
+                { "questionText": "Whatever you want", "isCorrect": true, "reactionText": "I love whatever you want!" },
+                { "questionText": "Burger", "isCorrect": false, "reactionText": "I'm not sure about that" },
+                { "questionText": "Salad", "isCorrect": false, "reactionText": "I'm not sure about that" }
             ]
         }
     ]

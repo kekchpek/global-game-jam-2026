@@ -5,12 +5,16 @@ namespace GlobalGameJam2026.MVVM.Models.Dating.Data
     public class DialogueOptionData
     {
         [JsonProperty]
-        private string text;
+        private string questionText;
 
         [JsonProperty]
         private bool isCorrect;
 
-        public string Text => text;
+        [JsonProperty]
+        private string reactionText;
+
+        public string QuestionText => questionText;
         public bool IsCorrect => isCorrect;
+        public string ReactionText => reactionText;
     }
 }
