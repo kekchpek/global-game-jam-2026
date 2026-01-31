@@ -37,7 +37,7 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
         public DatingModel(IGameSaveManager gameSaveManager)
         {
             _gameSaveManager = gameSaveManager;
-            _gameSaveManager.IsInitialized.Bind(OnSaveInitialized);
+            //_gameSaveManager.IsInitialized.Bind(OnSaveInitialized);
         }
 
         private void OnSaveInitialized(bool initialized)
