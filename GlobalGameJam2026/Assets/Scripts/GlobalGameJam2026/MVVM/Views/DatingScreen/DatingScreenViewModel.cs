@@ -13,6 +13,7 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
         IContextSelectorViewModel<GirlReactionContext>
     {
         private const float ReactionDisplayDelaySeconds = 2f;
+        private const float EndGameDisplayDelaySeconds = 3f;
         
         private readonly ViewModelContext<GirlReactionContext> _girlReactionContext;
         private readonly IDatingService _datingService;
@@ -42,13 +43,29 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
         {
             await UniTask.WaitForSeconds(ReactionDisplayDelaySeconds);
             
-            // Don't continue if game ended (Win or Lose)
+            // If this is already an end game context, close the view after delay
             if (context.Reaction == GirlReaction.Win || context.Reaction == GirlReaction.Lose)
             {
+                await UniTask.WaitForSeconds(EndGameDisplayDelaySeconds);
+                await Close();
                 return;
             }
             
-            if (_datingModel.GameState.Value == DatingGameState.Playing)
+            var gameState = _datingModel.GameState.Value;
+            
+            if (gameState == DatingGameState.Won)
+            {
+                var endDialogue = _datingService.GetEndDialogue(true);
+                var endContext = new GirlReactionContext(GirlReaction.Win, endDialogue);
+                ContextSelected?.Invoke(endContext);
+            }
+            else if (gameState == DatingGameState.Lost)
+            {
+                var endDialogue = _datingService.GetEndDialogue(false);
+                var endContext = new GirlReactionContext(GirlReaction.Lose, endDialogue);
+                ContextSelected?.Invoke(endContext);
+            }
+            else
             {
                 ContextSelected?.Invoke(GirlReactionContext.None);
                 _datingService.SelectNextQuestion();
