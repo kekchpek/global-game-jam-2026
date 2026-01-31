@@ -35,12 +35,18 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
                 return;
             }
             
-            HandleReactionAsync().Forget();
+            HandleReactionAsync(context).Forget();
         }
 
-        private async UniTaskVoid HandleReactionAsync()
+        private async UniTaskVoid HandleReactionAsync(GirlReactionContext context)
         {
             await UniTask.WaitForSeconds(ReactionDisplayDelaySeconds);
+            
+            // Don't continue if game ended (Win or Lose)
+            if (context.Reaction == GirlReaction.Win || context.Reaction == GirlReaction.Lose)
+            {
+                return;
+            }
             
             if (_datingModel.GameState.Value == DatingGameState.Playing)
             {

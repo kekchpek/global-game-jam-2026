@@ -53,14 +53,31 @@ namespace GlobalGameJam2026.MVVM.Views.DialogueOptions
             }
             
             var selectedOption = currentQuestion.Options[optionIndex];
-            _datingService.SelectAnswer(optionIndex);
+            var isCorrect = _datingService.SelectAnswer(optionIndex);
             
             // Hide options until next question appears
             _options.Set(Array.Empty<DialogueOptionData>());
             
-            var reaction = selectedOption.IsCorrect ? GirlReaction.Good : GirlReaction.Bad;
-            var context = new GirlReactionContext(reaction, selectedOption.ReactionText);
-            ContextSelected?.Invoke(context);
+            // Check if game ended after this answer
+            var gameState = _datingModel.GameState.Value;
+            if (gameState == DatingGameState.Won)
+            {
+                var endDialogue = _datingService.GetEndDialogue(true);
+                var context = new GirlReactionContext(GirlReaction.Win, endDialogue);
+                ContextSelected?.Invoke(context);
+            }
+            else if (gameState == DatingGameState.Lost)
+            {
+                var endDialogue = _datingService.GetEndDialogue(false);
+                var context = new GirlReactionContext(GirlReaction.Lose, endDialogue);
+                ContextSelected?.Invoke(context);
+            }
+            else
+            {
+                var reaction = isCorrect ? GirlReaction.Good : GirlReaction.Bad;
+                var context = new GirlReactionContext(reaction, selectedOption.ReactionText);
+                ContextSelected?.Invoke(context);
+            }
         }
 
         protected override void OnDestroyInternal()

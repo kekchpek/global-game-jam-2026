@@ -4,6 +4,8 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
     {
         None,
         Good,
-        Bad
+        Bad,
+        Win,
+        Lose
     }
 }
