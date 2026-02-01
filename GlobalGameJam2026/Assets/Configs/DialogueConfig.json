@@ -16,16 +16,6 @@
     ],
     "questions": [
         {
-            "id": "0",
-            "question": "Hi, my name is Lily. What's your name?",
-            "options": 
-            [
-                { "questionText": "Robert", "isCorrect": true, "reactionText": "Nice to meet you, Robert." },
-                { "questionText": "Alex", "isCorrect": true, "reactionText": "Glad to meet you, Alex." },
-                { "questionText": "Lincoln", "isCorrect": true, "reactionText": "That's an interesting name, Lincoln." }
-            ]
-        },
-        {
             "id": "1",
             "question": "How much do you earn per year?",
             "options": 
