@@ -31,7 +31,8 @@ namespace GlobalGameJam2026.MVVM.Views.LoseComics
                 _fadeOverlay.gameObject.SetActive(true);
             }
             UpdateSkin(ViewModel.CurrentMask.Value);
-            PlayLoseAnimation().Forget();
+            if (this)
+                PlayLoseAnimation().Forget();
         }
 
         private async UniTaskVoid PlayLoseAnimation()
@@ -101,19 +102,27 @@ namespace GlobalGameJam2026.MVVM.Views.LoseComics
 
         private void UpdateSkin(int currentMask)
         {
+            var defaultSkin = _skeletonGraphic.SkeletonData.FindSkin("default");
             var skinName = $"Mask_{currentMask}";
-            var skinData = _skeletonGraphic.SkeletonData.FindSkin(skinName);
+            var maskSkin = _skeletonGraphic.SkeletonData.FindSkin(skinName);
             
-            if (skinData == null)
+            if (maskSkin == null)
             {
                 Debug.LogWarning($"LoseComicsView: Skin '{skinName}' not found");
                 return;
             }
             
             var combinedSkin = new Skin("combinedSkin");
-            combinedSkin.AddSkin(skinData);
+            if (defaultSkin != null)
+            {
+                combinedSkin.AddSkin(defaultSkin);
+            }
+            else 
+            {
+                Debug.LogWarning($"LoseComicsView: Default skin not found");
+            }
+            combinedSkin.AddSkin(maskSkin);
             _skeletonGraphic.Skeleton.SetSkin(combinedSkin);
-            _skeletonGraphic.Skeleton.SetSlotsToSetupPose();
         }
     }
 }
