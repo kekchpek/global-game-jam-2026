@@ -1,5 +1,7 @@
 using Cysharp.Threading.Tasks;
 using kekchpek.Auxiliary;
+using Spine;
+using Spine.Unity;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityMVVM;
@@ -14,6 +16,7 @@ namespace GlobalGameJam2026.MVVM.Views.LoseComics
         [SerializeField] private float _animationDuration = 12f;
         [SerializeField] private Image _fadeOverlay;
         [SerializeField] private float _fadeDuration = 0.5f;
+        [SerializeField] private SkeletonGraphic _skeletonGraphic;
 
         protected override void OnViewModelSet()
         {
@@ -27,7 +30,7 @@ namespace GlobalGameJam2026.MVVM.Views.LoseComics
                 _fadeOverlay.color = color;
                 _fadeOverlay.gameObject.SetActive(true);
             }
-            
+            UpdateSkin(ViewModel.CurrentMask.Value);
             PlayLoseAnimation().Forget();
         }
 
@@ -94,6 +97,23 @@ namespace GlobalGameJam2026.MVVM.Views.LoseComics
             // Ensure final alpha is exactly 1
             color.a = 1f;
             _fadeOverlay.color = color;
+        }
+
+        private void UpdateSkin(int currentMask)
+        {
+            var skinName = $"Mask_{currentMask}";
+            var skinData = _skeletonGraphic.SkeletonData.FindSkin(skinName);
+            
+            if (skinData == null)
+            {
+                Debug.LogWarning($"LoseComicsView: Skin '{skinName}' not found");
+                return;
+            }
+            
+            var combinedSkin = new Skin("combinedSkin");
+            combinedSkin.AddSkin(skinData);
+            _skeletonGraphic.Skeleton.SetSkin(combinedSkin);
+            _skeletonGraphic.Skeleton.SetSlotsToSetupPose();
         }
     }
 }

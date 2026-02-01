@@ -1,6 +1,7 @@
 using Cysharp.Threading.Tasks;
 using GlobalGameJam2026.MVVM.Models.Dating;
 using GlobalGameJam2026.Static;
+using AsyncReactAwait.Bindable;
 using UnityMVVM.ViewManager;
 using UnityMVVM.ViewModelCore;
 
@@ -10,12 +11,16 @@ namespace GlobalGameJam2026.MVVM.Views.LoseComics
     {
         private readonly IViewManager _viewManager;
         private readonly IDatingService _datingService;
+        private readonly IDatingModel _datingModel;
+        public IBindable<int> CurrentMask => _datingModel.CurrentDate;
         public LoseComicsViewModel(
             IViewManager viewManager,
-            IDatingService datingService)
+            IDatingService datingService,
+            IDatingModel datingModel)
         {
             _viewManager = viewManager;
             _datingService = datingService;
+            _datingModel = datingModel;
         }
 
         public void OnAnimationComplete()
