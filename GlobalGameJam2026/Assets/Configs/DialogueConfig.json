@@ -1,6 +1,6 @@
 
 {
-    "maxRedFlags": 3,
+    "maxRedFlags": 1,
     "maxQuestions": 10,
     "winDialogues":[
         "You're so cool. Let's go to my place!",
