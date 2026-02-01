@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityMVVM;
 using kekchpek.Auxiliary;
+using TMPro;
 
 namespace GlobalGameJam2026.MVVM.Views.DatingScreen
 {
@@ -21,6 +22,7 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
         [SerializeField] private string _badReactionSequence;
         [SerializeField] private Image _fadeOverlay;
         [SerializeField] private float _fadeDuration = 0.5f;
+        [SerializeField] private TextMeshProUGUI _currentDateText;
 
         private UniTaskCompletionSource _nextButtonTcs;
 
@@ -47,6 +49,7 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
             // Initialize first question
             SmartBind(ViewModel.CurrentQuestionText, OnCurrentQuestionTextChanged);
             SmartBind(ViewModel.CurrentOptions, OnCurrentOptionsChanged);
+            SmartBind(ViewModel.CurrentDate, OnCurrentDateChanged);
 
             if(_manAnimController != null)
             {
@@ -70,6 +73,11 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
         private void OnCurrentOptionsChanged()
         {
             _optionsView.SetOptions(ViewModel.CurrentOptions.Value);
+        }
+
+        private void OnCurrentDateChanged()
+        {
+            _currentDateText.text = "Date: " + ViewModel.CurrentDate.Value.ToString();
         }
 
         private void OnOptionSelected(int optionIndex)

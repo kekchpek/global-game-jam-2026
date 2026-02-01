@@ -19,5 +19,6 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
         IReadOnlyCollection<string> RedFlagQuestionIds { get; }
         IBindable<int> LoseCount { get; }
         IBindable<bool> IsGameOver { get; }
+        IBindable<int> CurrentDate { get; }
     }
 }

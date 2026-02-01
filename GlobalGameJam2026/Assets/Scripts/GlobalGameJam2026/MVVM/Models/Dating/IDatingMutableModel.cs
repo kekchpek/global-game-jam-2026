@@ -19,5 +19,6 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
         void ResetProgress();
         void IncrementLoseCount();
         void RestartGame();
+        void IncrementCurrentDate();
     }
 }

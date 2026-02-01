@@ -33,6 +33,7 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
         /// Called when the answer flow animation sequence is complete.
         /// </summary>
         void OnAnswerFlowComplete();
+        IBindable<int> CurrentDate { get; }
     }
     
     public class AnswerFlowData

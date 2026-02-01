@@ -22,7 +22,7 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
 
         public IBindable<string> CurrentQuestionText => _currentQuestionText;
         public IBindable<IReadOnlyList<DialogueOptionData>> CurrentOptions => _currentOptions;
-        
+        public IBindable<int> CurrentDate => _datingModel.CurrentDate;
         public event Action<AnswerFlowData> AnswerFlowStarted;
 
         public DatingScreenViewModel(

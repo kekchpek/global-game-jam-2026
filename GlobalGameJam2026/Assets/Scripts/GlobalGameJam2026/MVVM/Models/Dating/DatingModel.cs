@@ -28,6 +28,7 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
         private IMutable<MutableList<string>> _redFlagQuestionIds;
         private IMutable<int> _loseCount;
         private IMutable<bool> _isGameOver;
+        private IMutable<int> _currentDate;
 
         public IBindable<DialogueQuestionData> CurrentQuestion => _currentQuestion;
         public IBindable<int> GreenFlagCount => GetOrCreateSavedInt(ref _greenFlagCount, "GreenFlagCount", 0);
@@ -41,6 +42,7 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
         public IReadOnlyCollection<string> RedFlagQuestionIds => GetOrCreateSavedRedFlagQuestionIds().Value;
         public IBindable<int> LoseCount => GetOrCreateSavedInt(ref _loseCount, "LoseCount", 0);
         public IBindable<bool> IsGameOver => GetOrCreateSavedBool(ref _isGameOver, "IsGameOver", false);
+        public IBindable<int> CurrentDate => GetOrCreateSavedInt(ref _currentDate, "CurrentDate", 1);
 
         public DatingModel(IGameSaveManager gameSaveManager)
         {
@@ -151,7 +153,13 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
             GetOrCreateSavedBool(ref _isGameOver, "IsGameOver", false).Value = false;            
             GetOrCreateSavedUsedQuestionIds().Value.Clear();
             GetOrCreateSavedRedFlagQuestionIds().Value.Clear();
+            GetOrCreateSavedInt(ref _currentDate, "CurrentDate", 1).Value = 1;
             _gameState.Value = DatingGameState.Playing;
+        }
+
+        public void IncrementCurrentDate()
+        {
+            GetOrCreateSavedInt(ref _currentDate, "CurrentDate", 1).Value++;
         }
 
         private IMutable<int> GetOrCreateSavedInt(ref IMutable<int> field, string key, int defaultValue)

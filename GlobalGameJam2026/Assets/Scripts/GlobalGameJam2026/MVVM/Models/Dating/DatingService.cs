@@ -114,6 +114,7 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
             _model.RemoveUsedQuestionIds(redFlagIds);
             _model.ClearRedFlagQuestionIds();
             _model.ResetProgress();
+            _model.IncrementCurrentDate();
             _model.SetGameState(DatingGameState.Playing);
         }
 
