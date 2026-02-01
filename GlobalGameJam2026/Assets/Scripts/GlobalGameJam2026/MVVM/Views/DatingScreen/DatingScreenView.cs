@@ -5,6 +5,7 @@ using GlobalGameJam2026.MVVM.Views.RedFlagsIndicator;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityMVVM;
+using kekchpek.Auxiliary;
 
 namespace GlobalGameJam2026.MVVM.Views.DatingScreen
 {
@@ -14,6 +15,10 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
         [SerializeField] private DialogueOptionsView _optionsView;
         [SerializeField] private RedFlagsIndicatorView _redFlagsView;
         [SerializeField] private Button _nextButton;
+        [SerializeField] private AnimationController _girlAnimController;
+        [SerializeField] private AnimationController _manAnimController;
+        [SerializeField] private string _goodReactionSequence;
+        [SerializeField] private string _badReactionSequence;
 
         private UniTaskCompletionSource _nextButtonTcs;
 
@@ -31,6 +36,11 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
             // Initialize first question
             SmartBind(ViewModel.CurrentQuestionText, OnCurrentQuestionTextChanged);
             SmartBind(ViewModel.CurrentOptions, OnCurrentOptionsChanged);
+
+            if(_manAnimController != null)
+            {
+                _manAnimController.PlaySequenceLooped("Idle");
+            }
         }
 
         private void OnNextButtonClicked()
@@ -66,6 +76,10 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
             await UniTask.WhenAll(hideOptionsTask, hideQuestionTask);
             
             // Step 2: Girl reacts (skip for now - будет добавлено позже)
+            if(_girlAnimController != null)
+            {
+                await PlaySequence(flowData.IsCorrect);
+            }
             
             // Step 3: Show her bubble
             await _questionView.ShowBubble();
@@ -112,6 +126,12 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
             
             // Notify ViewModel that flow is complete
             ViewModel.OnAnswerFlowComplete();
+        }
+
+        private async UniTask PlaySequence(bool isGood)
+        {
+            var sequence = isGood ? _goodReactionSequence : _badReactionSequence;
+            await _girlAnimController.PlaySequence(sequence);
         }
 
         protected override void OnViewModelClear()
