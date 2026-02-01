@@ -9,6 +9,8 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
 {
     public class DatingModel : IDatingMutableModel
     {
+        private const int MaxLoseCount = 5;
+        
         private readonly IGameSaveManager _gameSaveManager;
         private ISaveDataProvider _saveDataProvider;
 
@@ -24,6 +26,8 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
         private IMutable<MutableList<bool>> _answeredQuestions;
         private IMutable<MutableList<string>> _usedQuestionIds;
         private IMutable<MutableList<string>> _redFlagQuestionIds;
+        private IMutable<int> _loseCount;
+        private IMutable<bool> _isGameOver;
 
         public IBindable<DialogueQuestionData> CurrentQuestion => _currentQuestion;
         public IBindable<int> GreenFlagCount => GetOrCreateSavedInt(ref _greenFlagCount, "GreenFlagCount", 0);
@@ -35,6 +39,8 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
         public IBindableList<bool> AnsweredQuestions => GetOrCreateSavedBoolList().Value;
         public IReadOnlyCollection<string> UsedQuestionIds => GetOrCreateSavedUsedQuestionIds().Value;
         public IReadOnlyCollection<string> RedFlagQuestionIds => GetOrCreateSavedRedFlagQuestionIds().Value;
+        public IBindable<int> LoseCount => GetOrCreateSavedInt(ref _loseCount, "LoseCount", 0);
+        public IBindable<bool> IsGameOver => GetOrCreateSavedBool(ref _isGameOver, "IsGameOver", false);
 
         public DatingModel(IGameSaveManager gameSaveManager)
         {
@@ -124,6 +130,30 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
             GetOrCreateSavedBoolList().Value.Clear();
         }
 
+        public void IncrementLoseCount()
+        {
+            var loseCount = GetOrCreateSavedInt(ref _loseCount, "LoseCount", 0);
+            loseCount.Value++;
+            
+            if (loseCount.Value >= MaxLoseCount)
+            {
+                GetOrCreateSavedBool(ref _isGameOver, "IsGameOver", false).Value = true;
+            }
+        }
+
+        public void RestartGame()
+        {
+            GetOrCreateSavedInt(ref _greenFlagCount, "GreenFlagCount", 0).Value = 0;
+            GetOrCreateSavedInt(ref _redFlagCount, "RedFlagCount", 0).Value = 0;
+            GetOrCreateSavedInt(ref _questionsAnswered, "QuestionsAnswered", 0).Value = 0;
+            GetOrCreateSavedBoolList().Value.Clear();            
+            GetOrCreateSavedInt(ref _loseCount, "LoseCount", 0).Value = 0;
+            GetOrCreateSavedBool(ref _isGameOver, "IsGameOver", false).Value = false;            
+            GetOrCreateSavedUsedQuestionIds().Value.Clear();
+            GetOrCreateSavedRedFlagQuestionIds().Value.Clear();
+            _gameState.Value = DatingGameState.Playing;
+        }
+
         private IMutable<int> GetOrCreateSavedInt(ref IMutable<int> field, string key, int defaultValue)
         {
             if (field == null)
@@ -171,6 +201,22 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
                 }
             }
             return _answeredQuestions;
+        }
+
+        private IMutable<bool> GetOrCreateSavedBool(ref IMutable<bool> field, string key, bool defaultValue)
+        {
+            if (field == null)
+            {
+                if (_saveDataProvider != null)
+                {
+                    field = _saveDataProvider.DeserializeAndCaptureStructValue($"Dating/{key}", defaultValue);
+                }
+                else
+                {
+                    field = new Mutable<bool>(defaultValue);
+                }
+            }
+            return field;
         }
 
         private IMutable<MutableList<string>> GetOrCreateSavedUsedQuestionIds()

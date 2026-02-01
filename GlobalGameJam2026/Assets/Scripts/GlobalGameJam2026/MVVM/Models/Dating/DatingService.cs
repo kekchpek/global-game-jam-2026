@@ -101,20 +101,26 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
 
         public void MaskSwap()
         {
-            // Get at least 2 red flag question IDs
+            _model.IncrementLoseCount();
+            
+            if (_model.IsGameOver.Value)
+            {
+                RestartGame();
+                return;
+            }
+            
             var redFlagIds = _model.RedFlagQuestionIds.Take(2).ToList();
             
-            // Remove them from used questions (so they can appear again)
             _model.RemoveUsedQuestionIds(redFlagIds);
-            
-            // Clear the red flag tracking
             _model.ClearRedFlagQuestionIds();
-            
-            // Full reset
             _model.ResetProgress();
-            
-            // Set state back to playing
             _model.SetGameState(DatingGameState.Playing);
+        }
+
+        private void RestartGame()
+        {
+            _model.RestartGame();            
+            _availableQuestions = new List<DialogueQuestionData>(_config.Questions);
         }
     }
 }
