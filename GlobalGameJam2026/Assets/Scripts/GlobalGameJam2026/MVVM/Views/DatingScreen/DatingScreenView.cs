@@ -19,6 +19,8 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
         [SerializeField] private AnimationController _manAnimController;
         [SerializeField] private string _goodReactionSequence;
         [SerializeField] private string _badReactionSequence;
+        [SerializeField] private Image _fadeOverlay;
+        [SerializeField] private float _fadeDuration = 0.5f;
 
         private UniTaskCompletionSource _nextButtonTcs;
 
@@ -33,6 +35,15 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
             // Hide next button initially
             _nextButton.gameObject.SetActive(false);
             
+            // Initialize fade overlay (fully opaque - screen starts black)
+            if (_fadeOverlay != null)
+            {
+                var color = _fadeOverlay.color;
+                color.a = 1f;
+                _fadeOverlay.color = color;
+                _fadeOverlay.gameObject.SetActive(true);
+            }
+            
             // Initialize first question
             SmartBind(ViewModel.CurrentQuestionText, OnCurrentQuestionTextChanged);
             SmartBind(ViewModel.CurrentOptions, OnCurrentOptionsChanged);
@@ -41,6 +52,9 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
             {
                 _manAnimController.PlaySequenceLooped("Idle");
             }
+            
+            // Play fade-in animation
+            PlayFadeIn().Forget();
         }
 
         private void OnNextButtonClicked()
@@ -124,8 +138,66 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
                 _nextButton.gameObject.SetActive(false);
             }
             
+            // Fade to black before transitioning to Win/Lose comics
+            if (flowData.IsGameEnd)
+            {
+                await PlayFadeOut();
+                await UniTask.WaitForSeconds(1f);
+            }
+            
             // Notify ViewModel that flow is complete
             ViewModel.OnAnswerFlowComplete();
+        }
+        
+        private async UniTask PlayFadeOut()
+        {
+            if (_fadeOverlay == null) return;
+            
+            _fadeOverlay.gameObject.SetActive(true);
+            
+            // Fade the overlay from alpha 0 to 1 (transparent to black)
+            float elapsed = 0f;
+            var color = _fadeOverlay.color;
+            color.a = 0f;
+            _fadeOverlay.color = color;
+            
+            while (elapsed < _fadeDuration)
+            {
+                elapsed += Time.deltaTime;
+                float alpha = Mathf.Clamp01(elapsed / _fadeDuration);
+                color.a = alpha;
+                _fadeOverlay.color = color;
+                await UniTask.Yield();
+            }
+            
+            // Ensure final alpha is exactly 1
+            color.a = 1f;
+            _fadeOverlay.color = color;
+        }
+        
+        private async UniTaskVoid PlayFadeIn()
+        {
+            if (_fadeOverlay == null) return;
+            
+            // Fade the overlay from alpha 1 to 0 (black to transparent)
+            float elapsed = 0f;
+            var color = _fadeOverlay.color;
+            color.a = 1f;
+            _fadeOverlay.color = color;
+            
+            while (elapsed < _fadeDuration)
+            {
+                elapsed += Time.deltaTime;
+                float alpha = 1f - Mathf.Clamp01(elapsed / _fadeDuration);
+                color.a = alpha;
+                _fadeOverlay.color = color;
+                await UniTask.Yield();
+            }
+            
+            // Ensure final alpha is exactly 0
+            color.a = 0f;
+            _fadeOverlay.color = color;
+            _fadeOverlay.gameObject.SetActive(false);
         }
 
         private async UniTask PlaySequence(bool isGood)

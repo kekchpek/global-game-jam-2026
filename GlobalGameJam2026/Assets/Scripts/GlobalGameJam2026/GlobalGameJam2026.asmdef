@@ -11,7 +11,8 @@
         "SaveSystem",
         "kekchpek.AnimationController",
         "spine-unity",
-        "spine-csharp"
+        "spine-csharp",
+        "UniTask.DOTween"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
