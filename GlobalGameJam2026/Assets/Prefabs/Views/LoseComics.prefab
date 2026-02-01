@@ -313,7 +313,7 @@ MonoBehaviour:
   referenceSize: {x: 16214.633, y: 9123.711}
   pivotOffset: {x: 0, y: 0}
   referenceScale: 4.45438
-  layoutScale: 0.23674577
+  layoutScale: 0.043512996
   rectTransformSize: {x: 458.5784, y: 482.9478}
   editReferenceRect: 0
   updateWhenInvisible: 3
