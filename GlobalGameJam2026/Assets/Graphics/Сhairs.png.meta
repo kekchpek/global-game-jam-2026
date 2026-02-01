@@ -1,0 +1,637 @@
+fileFormatVersion: 2
+guid: da9ffa16fdbe3e1438a9ec8a28c659a0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2362923871619377783
+    second: "\u0421hairs_0"
+  - first:
+      213: -6069918958485391
+    second: "\u0421hairs_1"
+  - first:
+      213: 8991310550960729629
+    second: "\u0421hairs_2"
+  - first:
+      213: 1470725813938443592
+    second: "\u0421hairs_3"
+  - first:
+      213: -6797172097415746150
+    second: "\u0421hairs_4"
+  - first:
+      213: 5917447841587523542
+    second: "\u0421hairs_5"
+  - first:
+      213: 29379179783641837
+    second: "\u0421hairs_6"
+  - first:
+      213: 1547296452892947895
+    second: "\u0421hairs_7"
+  - first:
+      213: -7094264319078751229
+    second: "\u0421hairs_8"
+  - first:
+      213: 5995525343298204716
+    second: "\u0421hairs_9"
+  - first:
+      213: -1024957416943028638
+    second: "\u0421hairs_10"
+  - first:
+      213: 6861615869884456807
+    second: "\u0421hairs_11"
+  - first:
+      213: 3353493342416409984
+    second: "\u0421hairs_12"
+  - first:
+      213: -2873158173860501696
+    second: "\u0421hairs_13"
+  - first:
+      213: 5782325717989821169
+    second: "\u0421hairs_14"
+  - first:
+      213: -7014821566777740843
+    second: "\u0421hairs_15"
+  - first:
+      213: 2443136510543556529
+    second: "\u0421hairs_16"
+  - first:
+      213: 2891500165628689579
+    second: "\u0421hairs_17"
+  - first:
+      213: -4755581574040652021
+    second: "\u0421hairs_18"
+  - first:
+      213: -5991813203150228777
+    second: "\u0421hairs_19"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "\u0421hairs_0"
+      rect:
+        serializedVersion: 2
+        x: 3702
+        y: 1145
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98516d01245353fd0800000000000000
+      internalID: -2362923871619377783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u0421hairs_1"
+      rect:
+        serializedVersion: 2
+        x: 3712
+        y: 1152
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1700aacd07f6aeff0800000000000000
+      internalID: -6069918958485391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u0421hairs_2"
+      rect:
+        serializedVersion: 2
+        x: 3750
+        y: 1127
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1e6c3fde4d87cc70800000000000000
+      internalID: 8991310550960729629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u0421hairs_3"
+      rect:
+        serializedVersion: 2
+        x: 3698
+        y: 1124
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8455cc5e551196410800000000000000
+      internalID: 1470725813938443592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u0421hairs_4"
+      rect:
+        serializedVersion: 2
+        x: 3702
+        y: 1142
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9d66588df79ba1a0800000000000000
+      internalID: -6797172097415746150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u0421hairs_5"
+      rect:
+        serializedVersion: 2
+        x: 3779
+        y: 1133
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dfe9beb57ffe1250800000000000000
+      internalID: 5917447841587523542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u0421hairs_6"
+      rect:
+        serializedVersion: 2
+        x: 3795
+        y: 1117
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deadbc65530686000800000000000000
+      internalID: 29379179783641837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u0421hairs_7"
+      rect:
+        serializedVersion: 2
+        x: 3798
+        y: 1107
+        width: 18
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b5f7ec0de9197510800000000000000
+      internalID: 1547296452892947895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u0421hairs_8"
+      rect:
+        serializedVersion: 2
+        x: 3823
+        y: 1113
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3042596503c1c8d90800000000000000
+      internalID: -7094264319078751229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u0421hairs_9"
+      rect:
+        serializedVersion: 2
+        x: 3832
+        y: 1107
+        width: 7
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c243429b882643350800000000000000
+      internalID: 5995525343298204716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u0421hairs_10"
+      rect:
+        serializedVersion: 2
+        x: 3825
+        y: 1099
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2667535e8ae96c1f0800000000000000
+      internalID: -1024957416943028638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u0421hairs_11"
+      rect:
+        serializedVersion: 2
+        x: 3827
+        y: 1085
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76f55ad774b593f50800000000000000
+      internalID: 6861615869884456807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u0421hairs_12"
+      rect:
+        serializedVersion: 2
+        x: 3832
+        y: 1098
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0851e576d600a8e20800000000000000
+      internalID: 3353493342416409984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u0421hairs_13"
+      rect:
+        serializedVersion: 2
+        x: 3279
+        y: 0
+        width: 561
+        height: 1087
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 047e88f0ddd7028d0800000000000000
+      internalID: -2873158173860501696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u0421hairs_14"
+      rect:
+        serializedVersion: 2
+        x: 3684
+        y: 1086
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fa836cba92fe3050800000000000000
+      internalID: 5782325717989821169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u0421hairs_15"
+      rect:
+        serializedVersion: 2
+        x: 3694
+        y: 1087
+        width: 15
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d1b67d73f856ae90800000000000000
+      internalID: -7014821566777740843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u0421hairs_16"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 535
+        height: 1070
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bf6cb846b3c7e120800000000000000
+      internalID: 2443136510543556529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u0421hairs_17"
+      rect:
+        serializedVersion: 2
+        x: 3818
+        y: 1068
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bacf740b41ca02820800000000000000
+      internalID: 2891500165628689579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u0421hairs_18"
+      rect:
+        serializedVersion: 2
+        x: 3834
+        y: 1061
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b07f9ea21c7c00eb0800000000000000
+      internalID: -4755581574040652021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u0421hairs_19"
+      rect:
+        serializedVersion: 2
+        x: 3783
+        y: 1038
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d23cb143adc8dca0800000000000000
+      internalID: -5991813203150228777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "\u0421hairs_0": -2362923871619377783
+      "\u0421hairs_1": -6069918958485391
+      "\u0421hairs_10": -1024957416943028638
+      "\u0421hairs_11": 6861615869884456807
+      "\u0421hairs_12": 3353493342416409984
+      "\u0421hairs_13": -2873158173860501696
+      "\u0421hairs_14": 5782325717989821169
+      "\u0421hairs_15": -7014821566777740843
+      "\u0421hairs_16": 2443136510543556529
+      "\u0421hairs_17": 2891500165628689579
+      "\u0421hairs_18": -4755581574040652021
+      "\u0421hairs_19": -5991813203150228777
+      "\u0421hairs_2": 8991310550960729629
+      "\u0421hairs_3": 1470725813938443592
+      "\u0421hairs_4": -6797172097415746150
+      "\u0421hairs_5": 5917447841587523542
+      "\u0421hairs_6": 29379179783641837
+      "\u0421hairs_7": 1547296452892947895
+      "\u0421hairs_8": -7094264319078751229
+      "\u0421hairs_9": 5995525343298204716
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
