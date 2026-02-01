@@ -13,6 +13,7 @@ namespace GlobalGameJam2026.MVVM.Views.LoseComics
         private readonly IDatingService _datingService;
         private readonly IDatingModel _datingModel;
         public IBindable<int> CurrentMask => _datingModel.CurrentDate;
+        
         public LoseComicsViewModel(
             IViewManager viewManager,
             IDatingService datingService,
@@ -25,6 +26,7 @@ namespace GlobalGameJam2026.MVVM.Views.LoseComics
 
         public void OnAnimationComplete()
         {
+            // Perform mask swap and continue to next date
             _datingService.MaskSwap();
             OpenDatingScreenAsync().Forget();
         }

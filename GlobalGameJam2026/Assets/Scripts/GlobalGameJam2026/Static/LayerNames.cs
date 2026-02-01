@@ -9,6 +9,7 @@ namespace GlobalGameJam2026.Static
     {
         public const string DatingScreen = "DatingScreen";
         public const string LoseComics = "LoseComics";
-        public const string WinComics = "WinComics";
+        public const string WinScreen = "WinScreen";
+        public const string LoseScreen = "LoseScreen";
     }
 }

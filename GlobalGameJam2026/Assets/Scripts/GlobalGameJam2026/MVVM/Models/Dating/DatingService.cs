@@ -99,13 +99,22 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
             : _config.LoseDialogues[Random.Range(0, _config.LoseDialogues.Count)];
         }
 
+        public bool IsGameOver => _model.IsGameOver.Value;
+        public bool WillNextLoseCauseGameOver => _model.WillNextLoseCauseGameOver;
+        
+        public void MarkGameOver()
+        {
+            // Just increment lose count to trigger game over state
+            _model.IncrementLoseCount();
+        }
+        
         public void MaskSwap()
         {
             _model.IncrementLoseCount();
             
+            // If game is over (reached lose limit), don't continue - LoseScreen will handle restart
             if (_model.IsGameOver.Value)
             {
-                RestartGame();
                 return;
             }
             
@@ -118,7 +127,7 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
             _model.SetGameState(DatingGameState.Playing);
         }
 
-        private void RestartGame()
+        public void ResetGame()
         {
             _model.RestartGame();            
             _availableQuestions = new List<DialogueQuestionData>(_config.Questions);

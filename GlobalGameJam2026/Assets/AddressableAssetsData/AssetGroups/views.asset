@@ -25,8 +25,13 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a34e93378d7d948d2b650af43469bc6c
-    m_Address: WinComics
+  - m_GUID: c756cb59ae5d84628ab097a99a772e2e
+    m_Address: WinScreen
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ef3cc088580b34c8484bb9e73f6da9cb
+    m_Address: LoseScreen
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

@@ -96,11 +96,22 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
             
             if (gameState == DatingGameState.Won)
             {
-                await _viewManager.Open(LayerNames.Screen, ViewNames.WinComics);
+                await _viewManager.Open(LayerNames.Screen, ViewNames.WinScreen);
             }
             else if (gameState == DatingGameState.Lost)
             {
-                await _viewManager.Open(LayerNames.Screen, ViewNames.LoseComics);
+                // Check if this loss will cause game over
+                if (_datingService.WillNextLoseCauseGameOver)
+                {
+                    // Mark game as over and go directly to LoseScreen
+                    _datingService.MarkGameOver();
+                    await _viewManager.Open(LayerNames.Screen, ViewNames.LoseScreen);
+                }
+                else
+                {
+                    // Not game over yet, show LoseComics
+                    await _viewManager.Open(LayerNames.Screen, ViewNames.LoseComics);
+                }
             }
         }
     }

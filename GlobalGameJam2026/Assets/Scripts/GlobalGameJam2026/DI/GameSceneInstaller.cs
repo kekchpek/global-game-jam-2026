@@ -5,8 +5,9 @@ using GlobalGameJam2026.MVVM.Views.DialogueOptions;
 using GlobalGameJam2026.MVVM.Views.DialogueQuestion;
 using GlobalGameJam2026.MVVM.Views.LoseComics;
 using GlobalGameJam2026.MVVM.Views.Mask;
+using GlobalGameJam2026.MVVM.Views.LoseScreen;
 using GlobalGameJam2026.MVVM.Views.RedFlagsIndicator;
-using GlobalGameJam2026.MVVM.Views.WinComics;
+using GlobalGameJam2026.MVVM.Views.WinScreen;
 using GlobalGameJam2026.Static;
 using Startup.Core;
 using UnityMVVM.DI;
@@ -28,8 +29,9 @@ namespace GlobalGameJam2026
             Container.InstallView<DialogueQuestionView, IDialogueQuestionViewModel, DialogueQuestionViewModel>();
             Container.InstallView<RedFlagsIndicatorView, IRedFlagsIndicatorViewModel, RedFlagsIndicatorViewModel>();
             Container.InstallView<LoseComicsView, ILoseComicsViewModel, LoseComicsViewModel>(ViewNames.LoseComics);
-            Container.InstallView<WinComicsView, IWinComicsViewModel, WinComicsViewModel>(ViewNames.WinComics);
             Container.InstallView<MaskView, IMaskViewModel, MaskViewModel>();
+            Container.InstallView<WinScreenView, IWinScreenViewModel, WinScreenViewModel>(ViewNames.WinScreen);
+            Container.InstallView<LoseScreenView, ILoseScreenViewModel, LoseScreenViewModel>(ViewNames.LoseScreen);
         }
     }
 }

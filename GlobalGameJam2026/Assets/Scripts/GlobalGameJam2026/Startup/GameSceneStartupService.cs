@@ -31,8 +31,9 @@ namespace GlobalGameJam2026
         {
             await _datingService.Initialize();
             await _assetsModel.LoadAsset<GameObject>(ViewNames.LoseComics);
-            await _assetsModel.LoadAsset<GameObject>(ViewNames.WinComics);
             await _assetsModel.LoadAsset<GameObject>(ViewNames.DatingScreen);
+            await _assetsModel.LoadAsset<GameObject>(ViewNames.WinScreen);
+            await _assetsModel.LoadAsset<GameObject>(ViewNames.LoseScreen);
             await _viewManager.Open(LayerNames.Screen, ViewNames.DatingScreen);
         }
     }

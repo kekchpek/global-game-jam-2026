@@ -43,6 +43,7 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
         public IBindable<int> LoseCount => GetOrCreateSavedInt(ref _loseCount, "LoseCount", 0);
         public IBindable<bool> IsGameOver => GetOrCreateSavedBool(ref _isGameOver, "IsGameOver", false);
         public IBindable<int> CurrentDate => GetOrCreateSavedInt(ref _currentDate, "CurrentDate", 1);
+        public bool WillNextLoseCauseGameOver => LoseCount.Value + 1 >= MaxLoseCount;
 
         public DatingModel(IGameSaveManager gameSaveManager)
         {

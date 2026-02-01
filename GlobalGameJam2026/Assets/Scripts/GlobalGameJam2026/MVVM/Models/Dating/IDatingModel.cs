@@ -20,5 +20,6 @@ namespace GlobalGameJam2026.MVVM.Models.Dating
         IBindable<int> LoseCount { get; }
         IBindable<bool> IsGameOver { get; }
         IBindable<int> CurrentDate { get; }
+        bool WillNextLoseCauseGameOver { get; }
     }
 }
