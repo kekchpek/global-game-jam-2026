@@ -94,6 +94,7 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
             // Step 2: Girl reacts (skip for now - будет добавлено позже)
             if(_girlAnimController != null)
             {
+                _girlAnimController.InterruptCurrentAnimation();
                 await PlaySequence(flowData.IsCorrect);
                 _girlAnimController.PlaySequenceLooped("Idle");
             }
