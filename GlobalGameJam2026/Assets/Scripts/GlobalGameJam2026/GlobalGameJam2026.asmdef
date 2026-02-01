@@ -9,7 +9,9 @@
         "AssetsSystem",
         "GameSaves",
         "SaveSystem",
-        "kekchpek.AnimationController"
+        "kekchpek.AnimationController",
+        "spine-unity",
+        "spine-csharp"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
