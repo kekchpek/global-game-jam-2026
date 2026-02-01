@@ -41,7 +41,7 @@
             "options": 
             [
                 { "questionText": "Big and fluffy", "isCorrect": false, "reactionText": "I prefer short-haired dogs." },
-                { "questionText": "Small and annoying", "isCorrect": false, "reactionText": "I don't get the point of small dogs." },
+                { "questionText": "Small and annoying", "isCorrect": false, "reactionText": "Might as well just get a cat then." },
                 { "questionText": "Well done dogs", "isCorrect": true, "reactionText": "Oh… yeah. Same." }
             ]
         },
@@ -264,7 +264,7 @@
                 { "questionText": "Part of the lore", "isCorrect": true, "reactionText": "Haha. I like that answer." },
                 { "questionText": "We're friends", "isCorrect": false, "reactionText": "That's… unsettling." }
             ]
-        },
+        },  
         {
             "id": "25",
             "question": "Why are you single?",
@@ -272,7 +272,7 @@
             [
                 { "questionText": "Wrong timing", "isCorrect": true, "reactionText": "That's very mature." },
                 { "questionText": "High standards", "isCorrect": false, "reactionText": "Sure. Whatever helps you sleep." },
-                { "questionText": "Been in prison", "isCorrect": false, "reactionText": "What? You’re insane." }
+                { "questionText": "Been in prison", "isCorrect": false, "reactionText": "What? You're insane." }
             ]
         }
     ]
