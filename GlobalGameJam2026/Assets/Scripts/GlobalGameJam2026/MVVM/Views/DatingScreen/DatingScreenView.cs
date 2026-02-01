@@ -17,7 +17,6 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
         [SerializeField] private RedFlagsIndicatorView _redFlagsView;
         [SerializeField] private Button _nextButton;
         [SerializeField] private AnimationController _girlAnimController;
-        [SerializeField] private AnimationController _manAnimController;
         [SerializeField] private string _goodReactionSequence;
         [SerializeField] private string _badReactionSequence;
         [SerializeField] private Image _fadeOverlay;
@@ -50,11 +49,6 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
             SmartBind(ViewModel.CurrentQuestionText, OnCurrentQuestionTextChanged);
             SmartBind(ViewModel.CurrentOptions, OnCurrentOptionsChanged);
             SmartBind(ViewModel.CurrentDate, OnCurrentDateChanged);
-
-            if(_manAnimController != null)
-            {
-                _manAnimController.PlaySequenceLooped("Idle");
-            }
             
             // Play fade-in animation
             PlayFadeIn().Forget();
@@ -101,6 +95,7 @@ namespace GlobalGameJam2026.MVVM.Views.DatingScreen
             if(_girlAnimController != null)
             {
                 await PlaySequence(flowData.IsCorrect);
+                _girlAnimController.PlaySequenceLooped("Idle");
             }
             
             // Step 3: Show her bubble

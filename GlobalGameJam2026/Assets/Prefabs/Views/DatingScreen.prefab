@@ -444,6 +444,164 @@ MonoBehaviour:
   _target: {fileID: 2180077293384905488}
   _mode: 3
   _targetSize: {x: 1920, y: 1}
+--- !u!1 &2315558388682675220
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4223181059859282060}
+  - component: {fileID: 6568433315131983816}
+  - component: {fileID: 7760171980330171183}
+  - component: {fileID: 7363589700126611777}
+  m_Layer: 0
+  m_Name: SkeletonGraphic (Girl)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4223181059859282060
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2315558388682675220}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8763676273370175372}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1409, y: -242}
+  m_SizeDelta: {x: 1070.0659, y: 1720.051}
+  m_Pivot: {x: 0.5018556, y: 0.49998313}
+--- !u!222 &6568433315131983816
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2315558388682675220}
+  m_CullTransparentMesh: 0
+--- !u!114 &7760171980330171183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2315558388682675220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85b887af7e6c3f45a2e2d2920d641bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: spine-unity::Spine.Unity.SkeletonGraphic
+  m_Material: {fileID: 2100000, guid: b66cf7a186d13054989b33a5c90044e4, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  skeletonDataAsset: {fileID: 11400000, guid: 36c9f6983b8743544803bc197fac09ed, type: 2}
+  additiveMaterial: {fileID: 2100000, guid: 2e8245019faeb8c43b75f9ca3ac8ee34, type: 2}
+  multiplyMaterial: {fileID: 2100000, guid: e74a1f8978a7da348a721508d0d58834, type: 2}
+  screenMaterial: {fileID: 2100000, guid: bab24c479f34eec45be6ea8595891569, type: 2}
+  m_SkeletonColor: {r: 1, g: 1, b: 1, a: 1}
+  initialSkinName: default
+  initialFlipX: 0
+  initialFlipY: 0
+  startingAnimation: Idle
+  startingLoop: 1
+  timeScale: 1
+  freeze: 0
+  layoutScaleMode: 0
+  referenceSize: {x: 1070.0659, y: 1720.051}
+  pivotOffset: {x: 0, y: 0}
+  referenceScale: 1
+  layoutScale: 1
+  rectTransformSize: {x: 1070.0659, y: 1720.051}
+  editReferenceRect: 0
+  updateWhenInvisible: 3
+  allowMultipleCanvasRenderers: 0
+  canvasRenderers: []
+  separatorSlotNames: []
+  enableSeparatorSlots: 0
+  separatorParts: []
+  updateSeparatorPartLocation: 1
+  updateSeparatorPartScale: 0
+  disableMeshAssignmentOnOverride: 1
+  physicsPositionInheritanceFactor: {x: 1, y: 1}
+  physicsRotationInheritanceFactor: 1
+  physicsMovementRelativeTo: {fileID: 0}
+  meshGenerator:
+    settings:
+      useClipping: 1
+      zSpacing: 0
+      tintBlack: 0
+      canvasGroupCompatible: 0
+      pmaVertexColors: 1
+      addNormals: 0
+      calculateTangents: 0
+      immutableTriangles: 0
+  updateTiming: 1
+  unscaledTime: 0
+--- !u!114 &7363589700126611777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2315558388682675220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 867fa0547d7df694f8e78716e7d57cbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: kekchpek.AnimationController::kekchpek.Auxiliary.AnimationController
+  _sequences:
+  - SequenceName: Good
+    Animations:
+    - Type: 1
+      ExecuteInParallel: 0
+      UnityAnimator: {fileID: 0}
+      AnimationStateName: 
+      SpineSkeleton: {fileID: 7760171980330171183}
+      SpineSkeletonAnimation: {fileID: 0}
+      AnimationName: Win
+      SpineAnimationLayer: 0
+      TargetAnimationController: {fileID: 0}
+      TargetSequenceName: 
+  - SequenceName: Bad
+    Animations:
+    - Type: 1
+      ExecuteInParallel: 0
+      UnityAnimator: {fileID: 0}
+      AnimationStateName: 
+      SpineSkeleton: {fileID: 7760171980330171183}
+      SpineSkeletonAnimation: {fileID: 0}
+      AnimationName: Lose
+      SpineAnimationLayer: 0
+      TargetAnimationController: {fileID: 0}
+      TargetSequenceName: 
+  - SequenceName: Idle
+    Animations:
+    - Type: 1
+      ExecuteInParallel: 0
+      UnityAnimator: {fileID: 0}
+      AnimationStateName: 
+      SpineSkeleton: {fileID: 7760171980330171183}
+      SpineSkeletonAnimation: {fileID: 0}
+      AnimationName: Idle
+      SpineAnimationLayer: 0
+      TargetAnimationController: {fileID: 0}
+      TargetSequenceName: 
 --- !u!1 &3054175670112836679
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,6 +695,18 @@ MonoBehaviour:
       ExecuteInParallel: 0
       UnityAnimator: {fileID: 6395124082129681106}
       AnimationStateName: Hide
+      SpineSkeleton: {fileID: 0}
+      SpineSkeletonAnimation: {fileID: 0}
+      AnimationName: 
+      SpineAnimationLayer: 0
+      TargetAnimationController: {fileID: 0}
+      TargetSequenceName: 
+  - SequenceName: Idle
+    Animations:
+    - Type: 0
+      ExecuteInParallel: 0
+      UnityAnimator: {fileID: 6395124082129681106}
+      AnimationStateName: Idle
       SpineSkeleton: {fileID: 0}
       SpineSkeletonAnimation: {fileID: 0}
       AnimationName: 
@@ -1346,6 +1516,7 @@ RectTransform:
   - {fileID: 749467286844027439}
   - {fileID: 3222367279988525917}
   - {fileID: 97847792260270480}
+  - {fileID: 4223181059859282060}
   - {fileID: 2149148431642021920}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1378,10 +1549,9 @@ MonoBehaviour:
   _optionsView: {fileID: 351214217965188796}
   _redFlagsView: {fileID: 5482280001133795764}
   _nextButton: {fileID: 1443342742392272720}
-  _girlAnimController: {fileID: 0}
-  _manAnimController: {fileID: 0}
-  _goodReactionSequence: 
-  _badReactionSequence: 
+  _girlAnimController: {fileID: 7363589700126611777}
+  _goodReactionSequence: Good
+  _badReactionSequence: Bad
   _fadeOverlay: {fileID: 223364188436159335}
   _fadeDuration: 2
   _currentDateText: {fileID: 2803001214751559039}
