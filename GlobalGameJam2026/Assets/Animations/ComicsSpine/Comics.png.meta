@@ -71,36 +71,6 @@ TextureImporter:
   - first:
       213: 6059895610675337719
     second: Comics_22
-  - first:
-      213: -359222754645887381
-    second: Comics_23
-  - first:
-      213: -5830152637316225959
-    second: Comics_24
-  - first:
-      213: -4986147449136436711
-    second: Comics_25
-  - first:
-      213: 572431297547362055
-    second: Comics_26
-  - first:
-      213: -2870975176796998295
-    second: Comics_27
-  - first:
-      213: 4646983665760327758
-    second: Comics_28
-  - first:
-      213: -3626447747198692876
-    second: Comics_29
-  - first:
-      213: -6299169184731664557
-    second: Comics_30
-  - first:
-      213: 922439072457385351
-    second: Comics_31
-  - first:
-      213: -7718337905402081754
-    second: Comics_32
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -199,10 +169,10 @@ TextureImporter:
       name: Comics_0
       rect:
         serializedVersion: 2
-        x: 735
-        y: 4032
-        width: 14
-        height: 7
+        x: 3801
+        y: 6491
+        width: 39
+        height: 469
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,10 +191,10 @@ TextureImporter:
       name: Comics_1
       rect:
         serializedVersion: 2
-        x: 776
-        y: 4035
-        width: 35
-        height: 8
+        x: 3844
+        y: 4962
+        width: 1805
+        height: 2197
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,10 +213,10 @@ TextureImporter:
       name: Comics_2
       rect:
         serializedVersion: 2
-        x: 1170
-        y: 3309
-        width: 982
-        height: 746
+        x: 7125
+        y: 6374
+        width: 74
+        height: 163
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,10 +235,10 @@ TextureImporter:
       name: Comics_3
       rect:
         serializedVersion: 2
-        x: 2810
-        y: 3347
-        width: 783
-        height: 744
+        x: 1
+        y: 4103
+        width: 3642
+        height: 2050
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -287,10 +257,10 @@ TextureImporter:
       name: Comics_4
       rect:
         serializedVersion: 2
-        x: 6
-        y: 3103
-        width: 945
-        height: 930
+        x: 6937
+        y: 6047
+        width: 262
+        height: 326
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -309,10 +279,10 @@ TextureImporter:
       name: Comics_5
       rect:
         serializedVersion: 2
-        x: 756
-        y: 4025
-        width: 20
-        height: 6
+        x: 3649
+        y: 5619
+        width: 222
+        height: 106
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,10 +301,10 @@ TextureImporter:
       name: Comics_6
       rect:
         serializedVersion: 2
-        x: 3597
-        y: 3813
-        width: 7
-        height: 9
+        x: 5660
+        y: 5698
+        width: 172
+        height: 215
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -353,10 +323,10 @@ TextureImporter:
       name: Comics_7
       rect:
         serializedVersion: 2
-        x: 3589
-        y: 3699
-        width: 8
-        height: 18
+        x: 3683
+        y: 5586
+        width: 179
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -375,10 +345,10 @@ TextureImporter:
       name: Comics_8
       rect:
         serializedVersion: 2
-        x: 3601
-        y: 3699
-        width: 6
-        height: 6
+        x: 7179
+        y: 5474
+        width: 20
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -397,10 +367,10 @@ TextureImporter:
       name: Comics_9
       rect:
         serializedVersion: 2
-        x: 1
-        y: 2361
-        width: 1354
-        height: 1026
+        x: 3821
+        y: 5517
+        width: 12
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -419,10 +389,10 @@ TextureImporter:
       name: Comics_10
       rect:
         serializedVersion: 2
-        x: 1419
-        y: 3240
-        width: 51
-        height: 20
+        x: 3839
+        y: 5516
+        width: 7
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -441,10 +411,10 @@ TextureImporter:
       name: Comics_11
       rect:
         serializedVersion: 2
-        x: 1885
-        y: 3135
-        width: 21
-        height: 227
+        x: 4736
+        y: 4957
+        width: 11
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -463,10 +433,10 @@ TextureImporter:
       name: Comics_12
       rect:
         serializedVersion: 2
-        x: 1904
-        y: 2371
-        width: 906
-        height: 1099
+        x: 4740
+        y: 4949
+        width: 35
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -485,10 +455,10 @@ TextureImporter:
       name: Comics_13
       rect:
         serializedVersion: 2
-        x: 2512
-        y: 2361
-        width: 843
-        height: 1021
+        x: 5149
+        y: 2895
+        width: 2050
+        height: 2579
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -507,10 +477,10 @@ TextureImporter:
       name: Comics_14
       rect:
         serializedVersion: 2
-        x: 1291
-        y: 3155
-        width: 104
-        height: 83
+        x: 1
+        y: 2053
+        width: 3642
+        height: 2050
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -529,10 +499,10 @@ TextureImporter:
       name: Comics_15
       rect:
         serializedVersion: 2
-        x: 1714
-        y: 3199
-        width: 60
-        height: 29
+        x: 3649
+        y: 3647
+        width: 566
+        height: 552
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -551,10 +521,10 @@ TextureImporter:
       name: Comics_16
       rect:
         serializedVersion: 2
-        x: 1334
-        y: 3153
-        width: 29
-        height: 19
+        x: 4237
+        y: 3647
+        width: 566
+        height: 552
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -573,10 +543,10 @@ TextureImporter:
       name: Comics_17
       rect:
         serializedVersion: 2
-        x: 3229
-        y: 2361
-        width: 744
-        height: 803
+        x: 1
+        y: 3
+        width: 3642
+        height: 2050
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -595,10 +565,10 @@ TextureImporter:
       name: Comics_18
       rect:
         serializedVersion: 2
-        x: 1406
-        y: 3045
-        width: 105
-        height: 86
+        x: 3643
+        y: 3
+        width: 2050
+        height: 3642
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -617,10 +587,10 @@ TextureImporter:
       name: Comics_19
       rect:
         serializedVersion: 2
-        x: 1809
-        y: 2699
-        width: 112
-        height: 54
+        x: 5716
+        y: 3
+        width: 1477
+        height: 1963
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -639,10 +609,10 @@ TextureImporter:
       name: Comics_20
       rect:
         serializedVersion: 2
-        x: 1826
-        y: 2682
-        width: 91
-        height: 37
+        x: 5935
+        y: 1961
+        width: 566
+        height: 552
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -661,10 +631,10 @@ TextureImporter:
       name: Comics_21
       rect:
         serializedVersion: 2
-        x: 1895
-        y: 2648
-        width: 7
-        height: 10
+        x: 6583
+        y: 1925
+        width: 566
+        height: 552
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -683,10 +653,10 @@ TextureImporter:
       name: Comics_22
       rect:
         serializedVersion: 2
-        x: 1581
-        y: 2361
-        width: 160
-        height: 131
+        x: 5703
+        y: 1167
+        width: 7
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -697,226 +667,6 @@ TextureImporter:
       bones: []
       spriteID: 7f9904283f2191450800000000000000
       internalID: 6059895610675337719
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Comics_23
-      rect:
-        serializedVersion: 2
-        x: 1741
-        y: 2361
-        width: 82
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b663812dec8c30bf0800000000000000
-      internalID: -359222754645887381
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Comics_24
-      rect:
-        serializedVersion: 2
-        x: 2353
-        y: 2364
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 954a57ad013271fa0800000000000000
-      internalID: -5830152637316225959
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Comics_25
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 1335
-        width: 1822
-        height: 1026
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 91aa0801055adcab0800000000000000
-      internalID: -4986147449136436711
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Comics_26
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 309
-        width: 1822
-        height: 1026
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 70f50a47b3fa1f700800000000000000
-      internalID: 572431297547362055
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Comics_27
-      rect:
-        serializedVersion: 2
-        x: 1823
-        y: 1335
-        width: 1822
-        height: 1026
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 965fc0ca94f3828d0800000000000000
-      internalID: -2870975176796998295
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Comics_28
-      rect:
-        serializedVersion: 2
-        x: 1823
-        y: 309
-        width: 1822
-        height: 1026
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e48dfa2f5076d7040800000000000000
-      internalID: 4646983665760327758
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Comics_29
-      rect:
-        serializedVersion: 2
-        x: 3786
-        y: 1127
-        width: 284
-        height: 276
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4f1d4b7dcf44cadc0800000000000000
-      internalID: -3626447747198692876
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Comics_30
-      rect:
-        serializedVersion: 2
-        x: 3786
-        y: 852
-        width: 284
-        height: 276
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 35f6bfb300bd498a0800000000000000
-      internalID: -6299169184731664557
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Comics_31
-      rect:
-        serializedVersion: 2
-        x: 3786
-        y: 578
-        width: 284
-        height: 276
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 78563c8f2792dcc00800000000000000
-      internalID: 922439072457385351
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Comics_32
-      rect:
-        serializedVersion: 2
-        x: 3648
-        y: 311
-        width: 284
-        height: 276
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 62e831c8194f2e490800000000000000
-      internalID: -7718337905402081754
       vertices: []
       indices: 
       edges: []
@@ -951,17 +701,7 @@ TextureImporter:
       Comics_20: 6474739468516066813
       Comics_21: 7481133337893041591
       Comics_22: 6059895610675337719
-      Comics_23: -359222754645887381
-      Comics_24: -5830152637316225959
-      Comics_25: -4986147449136436711
-      Comics_26: 572431297547362055
-      Comics_27: -2870975176796998295
-      Comics_28: 4646983665760327758
-      Comics_29: -3626447747198692876
       Comics_3: 3990988498683252705
-      Comics_30: -6299169184731664557
-      Comics_31: 922439072457385351
-      Comics_32: -7718337905402081754
       Comics_4: -3647182101672575046
       Comics_5: 8946665832226641677
       Comics_6: 9115855198505801637
